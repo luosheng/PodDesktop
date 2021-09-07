@@ -42,6 +42,7 @@ struct ContainerView: View {
                 ContainerItem(container: container)
             }
         }
+        .listStyle(InsetListStyle())
         .onAppear(perform: {
             containerStore.fetch()
         })

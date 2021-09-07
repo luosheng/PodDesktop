@@ -15,6 +15,7 @@ struct Sidebar: View {
                     Text("Containers / Apps")
                 }
             }
+            .listStyle(SidebarListStyle())
         }
     }
 }
