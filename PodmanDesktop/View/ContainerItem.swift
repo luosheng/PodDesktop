@@ -15,13 +15,22 @@ struct ContainerItem: View {
         VStack {
             HStack {
                 Text(container.names.joined(separator: ","))
+                    .font(.headline)
+                    .foregroundColor(.primary)
                 Text(container.image)
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
             }
             HStack {
                 Text(container.status)
+                    .font(.caption)
+                    .foregroundColor(.secondary)
                 Text(formatPorts(ports: container.ports))
+                    .font(.caption)
+                    .foregroundColor(.secondary)
             }
         }
+        
     }
     
     private func formatPorts(ports: [Container.Port]) -> String {
