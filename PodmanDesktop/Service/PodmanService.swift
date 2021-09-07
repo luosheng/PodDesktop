@@ -12,6 +12,12 @@ struct PodmanService {
     
     static let instance = PodmanService()
     
+    init() {
+        if let path = shell("/bin/bash", ["-l", "-c", "which podman"]) {
+            podmanPath = path
+        }
+    }
+    
     func fetchContainers() -> [Container]? {
         guard let json = shell(podmanPath, ["ps", "-a", "--format", "{{json}}"]) else {
             return .none
