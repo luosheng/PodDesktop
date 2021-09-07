@@ -12,23 +12,32 @@ struct ContainerItem: View {
     var container: Container
     
     var body: some View {
-        VStack {
-            HStack {
-                Text(container.names.joined(separator: ","))
-                    .font(.headline)
-                    .foregroundColor(.primary)
-                Text(container.image)
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
+        HStack{
+            VStack {
+                HStack {
+                    Text(container.names.joined(separator: ","))
+                        .font(.headline)
+                        .foregroundColor(.primary)
+                    Text(container.image)
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                }
+                HStack {
+                    Text(container.status)
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                    Text(formatPorts(ports: container.ports))
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                }
             }
+            Spacer()
             HStack {
-                Text(container.status)
-                    .font(.caption)
-                    .foregroundColor(.secondary)
-                Text(formatPorts(ports: container.ports))
-                    .font(.caption)
-                    .foregroundColor(.secondary)
+                Button("Stop") {
+                    
+                }
             }
+            .padding(.trailing, 10)
         }
         
     }
