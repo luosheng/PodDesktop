@@ -12,7 +12,7 @@ final class ContainerStore: ObservableObject {
     @Published var containers: [Container] = []
     
     func fetch() {
-        if let containers = PodmanService.fetchContainers() {
+        if let containers = PodmanService.instance.fetchContainers() {
             self.containers = containers
         }
     }

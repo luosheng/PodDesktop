@@ -10,8 +10,10 @@ import Foundation
 struct PodmanService {
     private var podmanPath = "/usr/local/bin/podman"
     
-    static func fetchContainers() -> [Container]? {
-        guard let json = shell("/usr/local/bin/podman", ["ps", "-a", "--format", "{{json}}"]) else {
+    static let instance = PodmanService()
+    
+    func fetchContainers() -> [Container]? {
+        guard let json = shell(podmanPath, ["ps", "-a", "--format", "{{json}}"]) else {
             return .none
         }
         guard let data = json.data(using: .utf8) else {
