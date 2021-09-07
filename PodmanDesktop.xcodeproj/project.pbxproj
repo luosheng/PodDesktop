@@ -18,6 +18,7 @@
 		B3AD756E26E7171B00F7E695 /* ContainerStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD756D26E7171B00F7E695 /* ContainerStore.swift */; };
 		B3AD757126E71A7600F7E695 /* containers.json in Resources */ = {isa = PBXBuildFile; fileRef = B3AD757026E71A7600F7E695 /* containers.json */; };
 		B3AD757326E71B2A00F7E695 /* MockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD757226E71B2A00F7E695 /* MockModel.swift */; };
+		B3AD757626E732EE00F7E695 /* ContainerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD757526E732EE00F7E695 /* ContainerItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		B3AD756D26E7171B00F7E695 /* ContainerStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerStore.swift; sourceTree = "<group>"; };
 		B3AD757026E71A7600F7E695 /* containers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = containers.json; sourceTree = "<group>"; };
 		B3AD757226E71B2A00F7E695 /* MockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockModel.swift; sourceTree = "<group>"; };
+		B3AD757526E732EE00F7E695 /* ContainerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +96,7 @@
 			children = (
 				B3AD754E26E6FE5C00F7E695 /* ContentView.swift */,
 				B3AD755F26E6FF2D00F7E695 /* Sidebar.swift */,
-				B3AD756426E7008500F7E695 /* ContainerView.swift */,
+				B3AD757426E732DE00F7E695 /* Container */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -130,6 +132,15 @@
 				B3AD757026E71A7600F7E695 /* containers.json */,
 			);
 			path = Mock;
+			sourceTree = "<group>";
+		};
+		B3AD757426E732DE00F7E695 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				B3AD756426E7008500F7E695 /* ContainerView.swift */,
+				B3AD757526E732EE00F7E695 /* ContainerItem.swift */,
+			);
+			name = Container;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +215,7 @@
 			files = (
 				B3AD756B26E70E4200F7E695 /* Shell.swift in Sources */,
 				B3AD756526E7008500F7E695 /* ContainerView.swift in Sources */,
+				B3AD757626E732EE00F7E695 /* ContainerItem.swift in Sources */,
 				B3AD754F26E6FE5C00F7E695 /* ContentView.swift in Sources */,
 				B3AD756826E701FF00F7E695 /* Container.swift in Sources */,
 				B3AD756026E6FF2D00F7E695 /* Sidebar.swift in Sources */,

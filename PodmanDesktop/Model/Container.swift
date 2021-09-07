@@ -9,8 +9,8 @@ import Foundation
 
 struct Container: Codable, Identifiable {
     
-    struct Port: Codable {
-        var hostPort: Int
+    public struct Port: Codable {
+        var hostPort: Int?
         var containerPort: Int
         var `protocol`: String
         var hostIP: String
@@ -33,7 +33,7 @@ struct Container: Codable, Identifiable {
     var pid: Int
     var pod: String
     var podName: String
-    var ports: [Port]?
+    var ports: [Port]
     var size: Int?
     var startedAt: Int
     var state: String
