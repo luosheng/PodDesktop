@@ -21,6 +21,7 @@
 		B3AD757626E732EE00F7E695 /* ContainerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD757526E732EE00F7E695 /* ContainerItem.swift */; };
 		B3AD757926E7409300F7E695 /* PodmanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD757826E7409300F7E695 /* PodmanService.swift */; };
 		B3AD757B26E7593800F7E695 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD757A26E7593800F7E695 /* Event.swift */; };
+		B3AD757D26E75BB800F7E695 /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD757C26E75BB800F7E695 /* Json.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		B3AD757526E732EE00F7E695 /* ContainerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerItem.swift; sourceTree = "<group>"; };
 		B3AD757826E7409300F7E695 /* PodmanService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodmanService.swift; sourceTree = "<group>"; };
 		B3AD757A26E7593800F7E695 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		B3AD757C26E75BB800F7E695 /* Json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Json.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				B3AD756A26E70E4200F7E695 /* Shell.swift */,
+				B3AD757C26E75BB800F7E695 /* Json.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				B3AD756B26E70E4200F7E695 /* Shell.swift in Sources */,
 				B3AD757B26E7593800F7E695 /* Event.swift in Sources */,
 				B3AD756526E7008500F7E695 /* ContainerView.swift in Sources */,
+				B3AD757D26E75BB800F7E695 /* Json.swift in Sources */,
 				B3AD757626E732EE00F7E695 /* ContainerItem.swift in Sources */,
 				B3AD754F26E6FE5C00F7E695 /* ContentView.swift in Sources */,
 				B3AD756826E701FF00F7E695 /* Container.swift in Sources */,
