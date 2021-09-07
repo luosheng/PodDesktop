@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Container: Codable {
+struct Container: Codable, Identifiable {
     
     struct Port: Codable {
         var hostPort: Int
