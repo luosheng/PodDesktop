@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SFSafeSymbols
 
 struct Sidebar: View {
     var body: some View {
@@ -16,6 +17,13 @@ struct Sidebar: View {
                 }
             }
             .listStyle(SidebarListStyle())
+        }
+        .toolbar {
+            ToolbarItem {
+                Button(action: {}) {
+                    Image(systemSymbol: .sidebarLeading)
+                }
+            }
         }
     }
 }
