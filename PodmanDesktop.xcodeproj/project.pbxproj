@@ -16,6 +16,8 @@
 		B3AD756826E701FF00F7E695 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD756726E701FF00F7E695 /* Container.swift */; };
 		B3AD756B26E70E4200F7E695 /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD756A26E70E4200F7E695 /* Shell.swift */; };
 		B3AD756E26E7171B00F7E695 /* ContainerStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD756D26E7171B00F7E695 /* ContainerStore.swift */; };
+		B3AD757126E71A7600F7E695 /* containers.json in Resources */ = {isa = PBXBuildFile; fileRef = B3AD757026E71A7600F7E695 /* containers.json */; };
+		B3AD757326E71B2A00F7E695 /* MockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD757226E71B2A00F7E695 /* MockModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		B3AD756726E701FF00F7E695 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		B3AD756A26E70E4200F7E695 /* Shell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shell.swift; sourceTree = "<group>"; };
 		B3AD756D26E7171B00F7E695 /* ContainerStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerStore.swift; sourceTree = "<group>"; };
+		B3AD757026E71A7600F7E695 /* containers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = containers.json; sourceTree = "<group>"; };
+		B3AD757226E71B2A00F7E695 /* MockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				B3AD754C26E6FE5C00F7E695 /* PodmanDesktopApp.swift */,
+				B3AD756F26E71A3700F7E695 /* Mock */,
 				B3AD756C26E7170400F7E695 /* Store */,
 				B3AD756626E701F300F7E695 /* Model */,
 				B3AD755C26E6FE8100F7E695 /* View */,
@@ -116,6 +121,15 @@
 				B3AD756D26E7171B00F7E695 /* ContainerStore.swift */,
 			);
 			path = Store;
+			sourceTree = "<group>";
+		};
+		B3AD756F26E71A3700F7E695 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				B3AD757226E71B2A00F7E695 /* MockModel.swift */,
+				B3AD757026E71A7600F7E695 /* containers.json */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +191,7 @@
 			files = (
 				B3AD755426E6FE6000F7E695 /* Preview Assets.xcassets in Resources */,
 				B3AD755126E6FE6000F7E695 /* Assets.xcassets in Resources */,
+				B3AD757126E71A7600F7E695 /* containers.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +207,7 @@
 				B3AD754F26E6FE5C00F7E695 /* ContentView.swift in Sources */,
 				B3AD756826E701FF00F7E695 /* Container.swift in Sources */,
 				B3AD756026E6FF2D00F7E695 /* Sidebar.swift in Sources */,
+				B3AD757326E71B2A00F7E695 /* MockModel.swift in Sources */,
 				B3AD756E26E7171B00F7E695 /* ContainerStore.swift in Sources */,
 				B3AD754D26E6FE5C00F7E695 /* PodmanDesktopApp.swift in Sources */,
 			);

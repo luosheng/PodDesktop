@@ -1,0 +1,51 @@
+[
+  {
+    "AutoRemove": false,
+    "Command": [
+      "rabbitmq-server"
+    ],
+    "CreatedAt": "4 hours ago",
+    "Exited": false,
+    "ExitedAt": -62135596800,
+    "ExitCode": 0,
+    "Id": "79b65a2ff703af6bf6911cb1b7d7098e8f0979b84c88271169dfa1ce596ad5bb",
+    "Image": "docker.io/library/rabbitmq:3-management",
+    "ImageID": "3e83da0dc9383e45de38454a7dee63590e781e3a5da6636cdd5cdcc2d59a1e7e",
+    "IsInfra": false,
+    "Labels": null,
+    "Mounts": [
+      "/var/lib/rabbitmq"
+    ],
+    "Names": [
+      "rabbitmq"
+    ],
+    "Namespaces": {
+
+    },
+    "Networks": [
+      "podman"
+    ],
+    "Pid": 229231,
+    "Pod": "",
+    "PodName": "",
+    "Ports": [
+      {
+        "hostPort": 15672,
+        "containerPort": 15672,
+        "protocol": "tcp",
+        "hostIP": ""
+      },
+      {
+        "hostPort": 5672,
+        "containerPort": 5672,
+        "protocol": "tcp",
+        "hostIP": ""
+      }
+    ],
+    "Size": null,
+    "StartedAt": 1630972331,
+    "State": "running",
+    "Status": "Up 4 hours ago",
+    "Created": 1630972330
+  }
+]
