@@ -8,13 +8,21 @@
 import SwiftUI
 
 struct ContainerView: View {
+    @ObservedObject var containerStore: ContainerStore
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List() {
+            ForEach(containerStore.containers) { container in
+                Text(container.names.joined(separator: ", "))
+            }
+        }.onAppear(perform: {
+            containerStore.fetch()
+        })
     }
-}
+ }
 
 struct ContainerView_Previews: PreviewProvider {
     static var previews: some View {
-        ContainerView()
+        ContainerView(containerStore: MockModel().containerStore)
     }
 }

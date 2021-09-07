@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct MockModel {
+final class MockModel {
     
-    let containerStore: ContainerStore
+    @Published var containerStore: ContainerStore
     
     init() {
         containerStore = ContainerStore()

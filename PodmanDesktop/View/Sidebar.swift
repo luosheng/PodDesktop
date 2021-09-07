@@ -11,7 +11,7 @@ struct Sidebar: View {
     var body: some View {
         NavigationView {
             List {
-                NavigationLink(destination: ContainerView()) {
+                NavigationLink(destination: ContainerView(containerStore: ContainerStore())) {
                     Text("Containers / Apps")
                 }
             }
