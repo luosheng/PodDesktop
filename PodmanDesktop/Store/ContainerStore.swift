@@ -13,12 +13,16 @@ final class ContainerStore: ObservableObject {
     
     init() {
         PodmanService.instance.addEventListener { event in
+            print(event)
             self.fetch()
         }
     }
     
     func fetch() {
-        if let containers = PodmanService.instance.fetchContainers() {
+        PodmanService.instance.fetchContainers { containers in
+            guard let containers = containers else {
+                return
+            }
             self.containers = containers
         }
     }

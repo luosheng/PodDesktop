@@ -17,21 +17,24 @@ final class PodmanService {
     static let instance = PodmanService()
     
     init() {
-        if let path = shell("/bin/bash", ["-l", "-c", "which podman"]) {
-            podmanPath = path
-        }
-        
-        interactiveShell(podmanPath, ["event", "--format", "{{json}}"]) { output in
-            let events = output.split(separator: "\n")
-                .map { $0.data(using: .utf8) }
-                .filter { $0 != .none }
-                .map { decode(Event.self, from: $0!) }
-            events.forEach { event in
-                self.listeners.forEach { listener in
-                    listener(event)
-                }
+        shell("/bin/bash", ["-l", "-c", "which podman"]) { path in
+            guard let path = path else {
+                return
             }
+            self.podmanPath = path
             
+            interactiveShell(self.podmanPath, ["events", "--format", "{{json}}"]) { output in
+                let events = output.split(separator: "\n")
+                    .map { $0.data(using: .utf8) }
+                    .filter { $0 != .none }
+                    .map { decode(Event.self, from: $0!) }
+                events.forEach { event in
+                    self.listeners.forEach { listener in
+                        listener(event)
+                    }
+                }
+                
+            }
         }
     }
     
@@ -39,14 +42,18 @@ final class PodmanService {
         listeners.append(listener)
     }
     
-    func fetchContainers() -> [Container]? {
-        guard let json = shell(podmanPath, ["ps", "-a", "--format", "{{json}}"]) else {
-            return .none
+    func fetchContainers(completion: @escaping ([Container]?) -> Void) {
+        shell(podmanPath, ["ps", "-a", "--format", "{{json}}"]) { json in
+            guard let json = json else {
+                completion(.none)
+                return
+            }
+            guard let data = json.data(using: .utf8) else {
+                completion(.none)
+                return
+            }
+            let decoder = JSONDecoder()
+            completion(try? decoder.decode([Container].self, from: data))
         }
-        guard let data = json.data(using: .utf8) else {
-            return .none
-        }
-        let decoder = JSONDecoder()
-        return try? decoder.decode([Container].self, from: data)
     }
 }
