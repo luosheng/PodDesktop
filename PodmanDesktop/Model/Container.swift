@@ -65,4 +65,22 @@ struct Container: Codable, Identifiable {
         case status = "Status"
         case created = "Created"
     }
+    
+    var readablePorts: String {
+        get {
+            return ports.map(formatPort(port:)).joined(separator: " ")
+        }
+    }
+    
+    private func formatPort(port: Port) -> String {
+        if let hostPort = port.hostPort {
+            var hostIp = port.hostIP
+            if (hostIp == "") {
+                hostIp = "0.0.0.0"
+            }
+            return "\(hostIp):\(hostPort)->\(port.containerPort)"
+        } else {
+            return "\(port.containerPort)"
+        }
+    }
 }

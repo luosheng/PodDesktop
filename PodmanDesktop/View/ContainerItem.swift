@@ -26,7 +26,7 @@ struct ContainerItem: View {
                     Text(container.status)
                         .font(.caption)
                         .foregroundColor(.secondary)
-                    Text(formatPorts(ports: container.ports))
+                    Text(container.readablePorts)
                         .font(.caption)
                         .foregroundColor(.secondary)
                 }
@@ -40,24 +40,6 @@ struct ContainerItem: View {
             .padding(.trailing, 10)
         }
         
-    }
-    
-    private func formatPorts(ports: [Container.Port]) -> String {
-        return ports.map {
-            formatPort(port: $0)
-        }.joined(separator: " ")
-    }
-    
-    private func formatPort(port: Container.Port) -> String {
-        if let hostPort = port.hostPort {
-            var hostIp = port.hostIP
-            if (hostIp == "") {
-                hostIp = "0.0.0.0"
-            }
-            return "\(hostIp):\(hostPort)->\(port.containerPort)"
-        } else {
-            return "\(port.containerPort)"
-        }
     }
 }
 
