@@ -25,6 +25,7 @@
 		B3AD758126E766AA00F7E695 /* images.json in Resources */ = {isa = PBXBuildFile; fileRef = B3AD758026E766AA00F7E695 /* images.json */; };
 		B3AD758326E766E500F7E695 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD758226E766E500F7E695 /* Image.swift */; };
 		B3AD758526E769B800F7E695 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD758426E769B800F7E695 /* ImageStore.swift */; };
+		B3AD758826E76A9D00F7E695 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD758726E76A9D00F7E695 /* ImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		B3AD758026E766AA00F7E695 /* images.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = images.json; sourceTree = "<group>"; };
 		B3AD758226E766E500F7E695 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		B3AD758426E769B800F7E695 /* ImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
+		B3AD758726E76A9D00F7E695 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			children = (
 				B3AD754E26E6FE5C00F7E695 /* ContentView.swift */,
 				B3AD755F26E6FF2D00F7E695 /* Sidebar.swift */,
+				B3AD758626E76A8500F7E695 /* Image */,
 				B3AD757426E732DE00F7E695 /* Container */,
 			);
 			path = View;
@@ -167,6 +170,14 @@
 				B3AD757826E7409300F7E695 /* PodmanService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		B3AD758626E76A8500F7E695 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				B3AD758726E76A9D00F7E695 /* ImageView.swift */,
+			);
+			name = Image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3AD758826E76A9D00F7E695 /* ImageView.swift in Sources */,
 				B3AD756B26E70E4200F7E695 /* Shell.swift in Sources */,
 				B3AD757B26E7593800F7E695 /* Event.swift in Sources */,
 				B3AD756526E7008500F7E695 /* ContainerView.swift in Sources */,
