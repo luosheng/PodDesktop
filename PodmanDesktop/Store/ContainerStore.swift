@@ -9,7 +9,7 @@ import Foundation
 
 final class ContainerStore: ObservableObject {
     
-    @Published private var containers: [Container] = []
+    @Published var containers: [Container] = []
     
     func fetch() {
         guard let json = shell("podman", ["ps", "-a", "--format", "'{{json}}'"]) else {
