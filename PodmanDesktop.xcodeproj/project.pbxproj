@@ -13,6 +13,7 @@
 		B3AD755426E6FE6000F7E695 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3AD755326E6FE6000F7E695 /* Preview Assets.xcassets */; };
 		B3AD756026E6FF2D00F7E695 /* Sidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD755F26E6FF2D00F7E695 /* Sidebar.swift */; };
 		B3AD756526E7008500F7E695 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD756426E7008500F7E695 /* ContainerView.swift */; };
+		B3AD756826E701FF00F7E695 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD756726E701FF00F7E695 /* Container.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		B3AD755626E6FE6000F7E695 /* PodmanDesktop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PodmanDesktop.entitlements; sourceTree = "<group>"; };
 		B3AD755F26E6FF2D00F7E695 /* Sidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sidebar.swift; sourceTree = "<group>"; };
 		B3AD756426E7008500F7E695 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
+		B3AD756726E701FF00F7E695 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				B3AD754C26E6FE5C00F7E695 /* PodmanDesktopApp.swift */,
+				B3AD756626E701F300F7E695 /* Model */,
 				B3AD755C26E6FE8100F7E695 /* View */,
 				B3AD755026E6FE6000F7E695 /* Assets.xcassets */,
 				B3AD755526E6FE6000F7E695 /* Info.plist */,
@@ -83,6 +86,14 @@
 				B3AD756426E7008500F7E695 /* ContainerView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B3AD756626E701F300F7E695 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B3AD756726E701FF00F7E695 /* Container.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +167,7 @@
 			files = (
 				B3AD756526E7008500F7E695 /* ContainerView.swift in Sources */,
 				B3AD754F26E6FE5C00F7E695 /* ContentView.swift in Sources */,
+				B3AD756826E701FF00F7E695 /* Container.swift in Sources */,
 				B3AD756026E6FF2D00F7E695 /* Sidebar.swift in Sources */,
 				B3AD754D26E6FE5C00F7E695 /* PodmanDesktopApp.swift in Sources */,
 			);
