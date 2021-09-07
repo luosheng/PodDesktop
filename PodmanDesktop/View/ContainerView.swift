@@ -48,10 +48,12 @@ struct ContainerView: View {
         })
         .navigationTitle("Containers / Apps")
         .toolbar {
-            Picker("Sort by", selection: $sorter) {
-                ForEach(Sorter.allCases) { sorter in
-                    Text(sorter.rawValue)
-                        .tag(sorter)
+            ToolbarItem(placement: .principal) {
+                Picker("Sort by", selection: $sorter) {
+                    ForEach(Sorter.allCases) { sorter in
+                        Text(sorter.rawValue)
+                            .tag(sorter)
+                    }
                 }
             }
             

@@ -19,7 +19,7 @@ struct Sidebar: View {
             .listStyle(SidebarListStyle())
         }
         .toolbar {
-            ToolbarItem {
+            ToolbarItem(placement: .status) {
                 Button(action: {}) {
                     Image(systemSymbol: .sidebarLeading)
                 }
