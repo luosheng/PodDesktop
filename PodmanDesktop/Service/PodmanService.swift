@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PodmanService {
+final class PodmanService {
     
     typealias EventListener = (Event) -> Void
     
@@ -20,9 +20,22 @@ struct PodmanService {
         if let path = shell("/bin/bash", ["-l", "-c", "which podman"]) {
             podmanPath = path
         }
+        
+        interactiveShell(podmanPath, ["event", "--format", "{{json}}"]) { output in
+            let events = output.split(separator: "\n")
+                .map { $0.data(using: .utf8) }
+                .filter { $0 != .none }
+                .map { decode(Event.self, from: $0!) }
+            events.forEach { event in
+                self.listeners.forEach { listener in
+                    listener(event)
+                }
+            }
+            
+        }
     }
     
-    mutating func addEventListener(listener: @escaping EventListener) {
+    func addEventListener(listener: @escaping EventListener) {
         listeners.append(listener)
     }
     
