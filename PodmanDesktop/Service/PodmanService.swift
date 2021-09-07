@@ -8,7 +8,11 @@
 import Foundation
 
 struct PodmanService {
+    
+    typealias EventListener = (Event) -> Void
+    
     private var podmanPath = "/usr/local/bin/podman"
+    private var listeners: [EventListener] = []
     
     static let instance = PodmanService()
     
@@ -16,6 +20,10 @@ struct PodmanService {
         if let path = shell("/bin/bash", ["-l", "-c", "which podman"]) {
             podmanPath = path
         }
+    }
+    
+    mutating func addEventListener(listener: @escaping EventListener) {
+        listeners.append(listener)
     }
     
     func fetchContainers() -> [Container]? {
