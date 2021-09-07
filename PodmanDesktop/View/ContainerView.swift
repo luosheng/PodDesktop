@@ -9,17 +9,55 @@ import SwiftUI
 
 struct ContainerView: View {
     @ObservedObject var containerStore: ContainerStore
+    @State private var sorter = Sorter.none
+    
+    enum Sorter: String, CaseIterable, Identifiable {
+        case none = "None"
+        case name = "Name"
+        case image = "Image"
+        case startedTime = "Started Time"
+        case status = "Status"
+        
+        var id: Sorter { self }
+    }
+    
+    var sortedContainers: [Container] {
+        switch sorter {
+        case .name:
+            return containerStore.containers.sorted { $0.names[0] > $1.names[0] }
+        case .image:
+            return containerStore.containers.sorted { $0.image > $1.image }
+        case .startedTime:
+            return containerStore.containers.sorted { $0.startedAt > $1.startedAt }
+        case .status:
+            return containerStore.containers.sorted { $0.status > $1.state }
+        default:
+            return containerStore.containers
+        }
+    }
     
     var body: some View {
         List() {
-            ForEach(containerStore.containers) { container in
+            ForEach(sortedContainers) { container in
                 ContainerItem(container: container)
             }
-        }.onAppear(perform: {
+        }
+        .onAppear(perform: {
             containerStore.fetch()
         })
+        .navigationTitle("Containers / Apps")
+        .toolbar {
+            Picker("Sort by", selection: $sorter) {
+                ForEach(Sorter.allCases) { sorter in
+                    Text(sorter.rawValue)
+                        .tag(sorter)
+                }
+            }
+            
+        }
+        
     }
- }
+}
 
 struct ContainerView_Previews: PreviewProvider {
     static var previews: some View {

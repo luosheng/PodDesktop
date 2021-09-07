@@ -9,7 +9,7 @@ import Foundation
 
 struct Container: Codable, Identifiable {
     
-    public struct Port: Codable {
+    struct Port: Codable {
         var hostPort: Int?
         var containerPort: Int
         var `protocol`: String
