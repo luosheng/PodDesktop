@@ -26,14 +26,14 @@ struct Container: Codable, Identifiable {
     var image: String
     var imageId: String
     var isInfra: Bool
-    var labels: [String]?
+    var labels: [String:String]?
     var mounts: [String]?
     var names: [String]
     var networks: [String]
     var pid: Int
     var pod: String
     var podName: String
-    var ports: [Port]
+    var ports: [Port]?
     var size: Int?
     var startedAt: Int
     var state: String
@@ -68,7 +68,7 @@ struct Container: Codable, Identifiable {
     
     var readablePorts: String {
         get {
-            return ports.map(formatPort(port:)).joined(separator: " ")
+            return ports?.map(formatPort(port:)).joined(separator: " ") ?? ""
         }
     }
     
