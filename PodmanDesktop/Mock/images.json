@@ -1,0 +1,50 @@
+[
+    {
+        "Id": "3e83da0dc9383e45de38454a7dee63590e781e3a5da6636cdd5cdcc2d59a1e7e",
+        "ParentId": "",
+        "RepoTags": null,
+        "RepoDigests": [
+            "sha256:84ce7b2aca72448ba136c5d881195a8765104fc7630851ca424a546a5fde0ba5",
+            "sha256:f9e14a04f4f5ec69b8e4e0fb21d56aa2c8f6fd4f7595e828def210aaaa30622f"
+        ],
+        "Size": 258464799,
+        "SharedSize": 0,
+        "VirtualSize": 258464799,
+        "Labels": null,
+        "Containers": 1,
+        "Names": [
+            "docker.io/library/rabbitmq:3-management"
+        ],
+        "Digest": "sha256:84ce7b2aca72448ba136c5d881195a8765104fc7630851ca424a546a5fde0ba5",
+        "History": [
+            "docker.io/library/rabbitmq:3-management"
+        ],
+        "Created": 1630383612,
+        "CreatedAt": "2021-08-31T04:20:12Z"
+    },
+    {
+        "Id": "083d7564d90469bfdf28aaee441c451d447283ebff0c8d465e33be94e79b4088",
+        "ParentId": "",
+        "RepoTags": null,
+        "RepoDigests": [
+            "sha256:10555bb0c50e13fc4dd965ddb5f00e948ffa53c13ff15dcdc85b7ab65e1f240b",
+            "sha256:17f1bac3054c393c7d27a770d7c27ec35fd7c9d33c5fafa654572e17ae927b2a"
+        ],
+        "Size": 29584452,
+        "SharedSize": 0,
+        "VirtualSize": 29584452,
+        "Labels": {
+            "maintainer": "NGINX Docker Maintainers \u003cdocker-maint@nginx.com\u003e"
+        },
+        "Containers": 0,
+        "Names": [
+            "docker.io/docker/getting-started:latest"
+        ],
+        "Digest": "sha256:10555bb0c50e13fc4dd965ddb5f00e948ffa53c13ff15dcdc85b7ab65e1f240b",
+        "History": [
+            "docker.io/docker/getting-started:latest"
+        ],
+        "Created": 1623397672,
+        "CreatedAt": "2021-06-11T07:47:52Z"
+    }
+]

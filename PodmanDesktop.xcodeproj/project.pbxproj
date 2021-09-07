@@ -22,6 +22,7 @@
 		B3AD757926E7409300F7E695 /* PodmanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD757826E7409300F7E695 /* PodmanService.swift */; };
 		B3AD757B26E7593800F7E695 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD757A26E7593800F7E695 /* Event.swift */; };
 		B3AD757D26E75BB800F7E695 /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD757C26E75BB800F7E695 /* Json.swift */; };
+		B3AD758126E766AA00F7E695 /* images.json in Resources */ = {isa = PBXBuildFile; fileRef = B3AD758026E766AA00F7E695 /* images.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		B3AD757826E7409300F7E695 /* PodmanService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodmanService.swift; sourceTree = "<group>"; };
 		B3AD757A26E7593800F7E695 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		B3AD757C26E75BB800F7E695 /* Json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Json.swift; sourceTree = "<group>"; };
+		B3AD758026E766AA00F7E695 /* images.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = images.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 			children = (
 				B3AD757226E71B2A00F7E695 /* MockModel.swift */,
 				B3AD757026E71A7600F7E695 /* containers.json */,
+				B3AD758026E766AA00F7E695 /* images.json */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3AD755426E6FE6000F7E695 /* Preview Assets.xcassets in Resources */,
+				B3AD758126E766AA00F7E695 /* images.json in Resources */,
 				B3AD755126E6FE6000F7E695 /* Assets.xcassets in Resources */,
 				B3AD757126E71A7600F7E695 /* containers.json in Resources */,
 			);
