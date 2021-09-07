@@ -9,10 +9,14 @@ import Foundation
 
 final class MockModel {
     
-    @Published var containerStore: ContainerStore
+    @Published private(set) var containerStore: ContainerStore!
+    @Published private(set) var imageStore: ImageStore!
     
     init() {
         containerStore = ContainerStore()
         containerStore.containers = loadMock("containers.json")
+        
+        imageStore = ImageStore()
+        imageStore.images = loadMock("images.json")
     }
 }
