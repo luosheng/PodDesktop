@@ -52,13 +52,13 @@ final class PodmanService {
         }
     }
     
-    func fetchImages(completion: @escaping ([Image]) -> Void) {
+    func fetchImages(completion: @escaping ([PodmanImage]) -> Void) {
         shell(podmanPath, ["images", "--format", "{{json}}"]) { json in
             guard let json = json else {
                 completion([])
                 return
             }
-            completion(decode([Image].self, from: json))
+            completion(decode([PodmanImage].self, from: json))
         }
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Image: Decodable, Identifiable {
+struct PodmanImage: Decodable, Identifiable {
     var id: String
     var parentId: String
     var repoTags: [String]?
