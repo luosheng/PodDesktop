@@ -20,7 +20,9 @@ final class ContainerStore: ObservableObject {
     
     func fetch() {
         PodmanService.instance.fetchContainers { containers in
-            self.containers = containers
+            DispatchQueue.main.async {
+                self.containers = containers
+            }
         }
     }
     
