@@ -20,9 +20,6 @@ final class ContainerStore: ObservableObject {
     
     func fetch() {
         PodmanService.instance.fetchContainers { containers in
-            guard let containers = containers else {
-                return
-            }
             self.containers = containers
         }
     }

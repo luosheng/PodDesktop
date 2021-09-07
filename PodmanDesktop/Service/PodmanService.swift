@@ -42,18 +42,17 @@ final class PodmanService {
         listeners.append(listener)
     }
     
-    func fetchContainers(completion: @escaping ([Container]?) -> Void) {
+    func fetchContainers(completion: @escaping ([Container]) -> Void) {
         shell(podmanPath, ["ps", "-a", "--format", "{{json}}"]) { json in
             guard let json = json else {
-                completion(.none)
+                completion([])
                 return
             }
             guard let data = json.data(using: .utf8) else {
-                completion(.none)
+                completion([])
                 return
             }
-            let decoder = JSONDecoder()
-            completion(try? decoder.decode([Container].self, from: data))
+            completion(decode([Container].self, from: data))
         }
     }
 }
