@@ -10,6 +10,7 @@ import SwiftUI
 struct ContainerItem: View {
     
     var container: Container
+    @State private var hovering = false
     
     var body: some View {
         HStack{
@@ -37,8 +38,12 @@ struct ContainerItem: View {
                     
                 }
             }
+            .opacity(hovering ? 1 : 0)
             .padding(.trailing, 10)
         }
+        .onHover(perform: { hovering in
+            self.hovering = hovering
+        })
         
     }
 }
