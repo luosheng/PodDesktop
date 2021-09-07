@@ -13,5 +13,8 @@ struct PodmanDesktopApp: App {
         WindowGroup {
             ContentView()
         }
+        .commands {
+            SidebarCommands()
+        }
     }
 }
