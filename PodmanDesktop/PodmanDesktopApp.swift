@@ -16,5 +16,7 @@ struct PodmanDesktopApp: App {
         .commands {
             SidebarCommands()
         }
+        .windowStyle(HiddenTitleBarWindowStyle())
+        .windowToolbarStyle(UnifiedCompactWindowToolbarStyle())
     }
 }
