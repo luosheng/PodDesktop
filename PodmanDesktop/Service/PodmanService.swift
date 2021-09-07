@@ -35,7 +35,7 @@ final class PodmanService {
         }
     }
     
-    func addEventListener(listener: @escaping EventListener) {
+    func addEventListener(_ listener: @escaping EventListener) {
         listeners.append(listener)
     }
     
