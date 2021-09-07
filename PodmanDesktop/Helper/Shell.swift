@@ -17,6 +17,6 @@ func shell(_ launchPath: String, _ arguments: [String]) -> String? {
     task.launch()
     
     let data = pipe.fileHandleForReading.readDataToEndOfFile()
-    let output = String(data: data, encoding: .utf8)
+    let output = String(data: data, encoding: .utf8)?.trimmingCharacters(in: .whitespacesAndNewlines)
     return output
 }
