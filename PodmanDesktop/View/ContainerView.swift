@@ -13,7 +13,7 @@ struct ContainerView: View {
     var body: some View {
         List() {
             ForEach(containerStore.containers) { container in
-                Text(container.names.joined(separator: ", "))
+                ContainerItem(container: container)
             }
         }.onAppear(perform: {
             containerStore.fetch()
