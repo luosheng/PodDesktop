@@ -15,6 +15,7 @@
 		B3AD756526E7008500F7E695 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD756426E7008500F7E695 /* ContainerView.swift */; };
 		B3AD756826E701FF00F7E695 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD756726E701FF00F7E695 /* Container.swift */; };
 		B3AD756B26E70E4200F7E695 /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD756A26E70E4200F7E695 /* Shell.swift */; };
+		B3AD756E26E7171B00F7E695 /* ContainerStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD756D26E7171B00F7E695 /* ContainerStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		B3AD756426E7008500F7E695 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		B3AD756726E701FF00F7E695 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		B3AD756A26E70E4200F7E695 /* Shell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shell.swift; sourceTree = "<group>"; };
+		B3AD756D26E7171B00F7E695 /* ContainerStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				B3AD754C26E6FE5C00F7E695 /* PodmanDesktopApp.swift */,
+				B3AD756C26E7170400F7E695 /* Store */,
 				B3AD756626E701F300F7E695 /* Model */,
 				B3AD755C26E6FE8100F7E695 /* View */,
 				B3AD756926E70E3100F7E695 /* Helper */,
@@ -105,6 +108,14 @@
 				B3AD756A26E70E4200F7E695 /* Shell.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		B3AD756C26E7170400F7E695 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				B3AD756D26E7171B00F7E695 /* ContainerStore.swift */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +192,7 @@
 				B3AD754F26E6FE5C00F7E695 /* ContentView.swift in Sources */,
 				B3AD756826E701FF00F7E695 /* Container.swift in Sources */,
 				B3AD756026E6FF2D00F7E695 /* Sidebar.swift in Sources */,
+				B3AD756E26E7171B00F7E695 /* ContainerStore.swift in Sources */,
 				B3AD754D26E6FE5C00F7E695 /* PodmanDesktopApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
