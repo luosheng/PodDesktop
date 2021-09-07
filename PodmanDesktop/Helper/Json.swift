@@ -16,6 +16,13 @@ func decode<T: Decodable>(_ type: T.Type, from data: Data) -> T {
     }
 }
 
+func decode<T: Decodable>(_ type: T.Type, from string: String) -> T {
+    guard let data = string.data(using: .utf8) else {
+        fatalError("Couldn't parse string into a valid JSON object \(string)")
+    }
+    return decode(T.self, from: data)
+}
+
 func loadMock<T: Decodable>(_ filename: String) -> T {
     let data: Data
     
