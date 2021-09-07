@@ -7,10 +7,18 @@
 
 import Foundation
 
-struct Event {
+struct Event: Codable {
     var name: String
     var status: String
     var time: String
     var type: String
-    var attributes: [String:AnyObject]
+    var attributes: [String:String]
+    
+    enum CodingKeys: String, CodingKey {
+        case name = "Name"
+        case status = "Status"
+        case time = "Time"
+        case type = "Type"
+        case attributes = "Attributes"
+    }
 }
