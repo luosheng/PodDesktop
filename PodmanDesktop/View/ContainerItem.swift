@@ -43,7 +43,9 @@ struct ContainerItem: View {
             }
             Spacer()
             HStack {
-                Button(action: {}) {
+                Button(action: {
+                    PodmanService.instance.restartContainer(container: container)
+                }) {
                     Image(systemSymbol: .arrowClockwiseCircle)
                         .resizable()
                         .foregroundColor(.accentColor)
@@ -74,7 +76,9 @@ struct ContainerItem: View {
                     .frame(width: 24, height: 24)
                 }
                 
-                Button(action: {}) {
+                Button(action: {
+                    PodmanService.instance.removeContainer(container: container)
+                }) {
                     Image(systemSymbol: .trashCircle)
                         .resizable()
                         .foregroundColor(.accentColor)

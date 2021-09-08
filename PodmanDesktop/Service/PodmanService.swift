@@ -62,11 +62,19 @@ final class PodmanService {
         }
     }
     
+    func restartContainer(container: Container) {
+        shell(podmanPath, ["restart", container.id])
+    }
+    
     func stopContainer(container: Container) {
         shell(podmanPath, ["stop", container.id])
     }
     
     func startContainer(container: Container) {
         shell(podmanPath, ["start", container.id])
+    }
+    
+    func removeContainer(container: Container) {
+        shell(podmanPath, ["rm", container.id])
     }
 }
