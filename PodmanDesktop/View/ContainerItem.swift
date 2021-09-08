@@ -6,14 +6,23 @@
 //
 
 import SwiftUI
+import SFSafeSymbols
 
 struct ContainerItem: View {
     
     var container: Container
     @State private var hovering = false
     
+    var isRunning: Bool {
+        container.state == "running"
+    }
+    
     var body: some View {
-        HStack{
+        HStack(alignment: .center) {
+            Image(systemSymbol: .shippingboxFill)
+                .resizable()
+                .frame(width: 32, height: 32)
+                .foregroundColor(isRunning ? .accentColor : .gray)
             VStack(alignment: .leading) {
                 HStack {
                     Text(container.names.joined(separator: ","))
