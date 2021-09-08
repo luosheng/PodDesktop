@@ -14,7 +14,7 @@ struct ContainerItem: View {
     
     var body: some View {
         HStack{
-            VStack {
+            VStack(alignment: .leading) {
                 HStack {
                     Text(container.names.joined(separator: ","))
                         .font(.headline)

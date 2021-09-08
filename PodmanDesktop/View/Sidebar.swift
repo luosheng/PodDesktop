@@ -13,7 +13,8 @@ struct Sidebar: View {
         NavigationView {
             List {
                 NavigationLink(destination: ContainerView(containerStore: ContainerStore())) {
-                    Text("Containers / Apps")
+                    Text("Containers")
+                        .font(.title2)
                 }
             }
             .listStyle(SidebarListStyle())

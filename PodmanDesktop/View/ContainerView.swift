@@ -46,7 +46,7 @@ struct ContainerView: View {
         .onAppear(perform: {
             containerStore.fetch()
         })
-        .navigationTitle("Containers / Apps")
+        .navigationTitle("Containers")
         .toolbar {
             ToolbarItem(placement: .principal) {
                 Picker("Sort by", selection: $sorter) {
