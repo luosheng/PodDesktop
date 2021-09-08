@@ -43,9 +43,40 @@ struct ContainerItem: View {
             }
             Spacer()
             HStack {
-                Button("Stop") {
-                    
+                Button(action: {}) {
+                    Image(systemSymbol: .arrowClockwiseCircle)
+                        .resizable()
+                        .foregroundColor(.accentColor)
                 }
+                .disabled(!isRunning)
+                .buttonStyle(PlainButtonStyle())
+                .frame(width: 24, height: 24)
+                
+                if (isRunning) {
+                    Button(action: {}) {
+                        Image(systemSymbol: .stopCircle)
+                            .resizable()
+                            .foregroundColor(.accentColor)
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                    .frame(width: 24, height: 24)
+                } else {
+                    Button(action: {}) {
+                        Image(systemSymbol: .playCircle)
+                            .resizable()
+                            .foregroundColor(.accentColor)
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                    .frame(width: 24, height: 24)
+                }
+                
+                Button(action: {}) {
+                    Image(systemSymbol: .trashCircle)
+                        .resizable()
+                        .foregroundColor(.accentColor)
+                }
+                .buttonStyle(PlainButtonStyle())
+                .frame(width: 24, height: 24)
             }
             .opacity(hovering ? 1 : 0)
             .padding(.trailing, 10)
