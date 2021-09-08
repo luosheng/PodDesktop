@@ -53,7 +53,9 @@ struct ContainerItem: View {
                 .frame(width: 24, height: 24)
                 
                 if (isRunning) {
-                    Button(action: {}) {
+                    Button(action: {
+                        PodmanService.instance.stopContainer(container: container)
+                    }) {
                         Image(systemSymbol: .stopCircle)
                             .resizable()
                             .foregroundColor(.accentColor)
@@ -61,7 +63,9 @@ struct ContainerItem: View {
                     .buttonStyle(PlainButtonStyle())
                     .frame(width: 24, height: 24)
                 } else {
-                    Button(action: {}) {
+                    Button(action: {
+                        PodmanService.instance.startContainer(container: container)
+                    }) {
                         Image(systemSymbol: .playCircle)
                             .resizable()
                             .foregroundColor(.accentColor)

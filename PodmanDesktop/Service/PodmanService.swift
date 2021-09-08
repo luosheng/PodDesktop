@@ -61,4 +61,12 @@ final class PodmanService {
             completion(decode([PodmanImage].self, from: json))
         }
     }
+    
+    func stopContainer(container: Container) {
+        shell(podmanPath, ["stop", container.id]) { _ in }
+    }
+    
+    func startContainer(container: Container) {
+        shell(podmanPath, ["start", container.id]) { _ in }
+    }
 }
