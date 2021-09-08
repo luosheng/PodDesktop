@@ -63,10 +63,10 @@ final class PodmanService {
     }
     
     func stopContainer(container: Container) {
-        shell(podmanPath, ["stop", container.id]) { _ in }
+        shell(podmanPath, ["stop", container.id])
     }
     
     func startContainer(container: Container) {
-        shell(podmanPath, ["start", container.id]) { _ in }
+        shell(podmanPath, ["start", container.id])
     }
 }

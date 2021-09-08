@@ -7,7 +7,11 @@
 
 import Foundation
 
-func shell(_ launchPath: String, _ arguments: [String], completionHandler: ((String?) -> Void)?) {
+func shell(_ launchPath: String, _ arguments: [String]) {
+    shell(launchPath, arguments, nil)
+}
+
+func shell(_ launchPath: String, _ arguments: [String], _ completionHandler: ((String?) -> Void)?) {
     DispatchQueue.global().async {
         let task = Process()
         task.launchPath = launchPath
@@ -26,7 +30,11 @@ func shell(_ launchPath: String, _ arguments: [String], completionHandler: ((Str
     }
 }
 
-func interactiveShell(_ launchPath: String, _ arguments: [String], progressHandler: ((String) -> Void)?) {
+func interactiveShell(_ launchPath: String, _ arguments: [String]) {
+    interactiveShell(launchPath, arguments, nil)
+}
+
+func interactiveShell(_ launchPath: String, _ arguments: [String], _ progressHandler: ((String) -> Void)?) {
     DispatchQueue.global().async {
         let task = Process()
         task.launchPath = launchPath
