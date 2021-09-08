@@ -7,7 +7,7 @@
 
 import Foundation
 
-func shell(_ launchPath: String, _ arguments: [String], completion: @escaping (String?) -> Void) {
+func shell(_ launchPath: String, _ arguments: [String], completionHandler: ((String?) -> Void)?) {
     DispatchQueue.global().async {
         let task = Process()
         task.launchPath = launchPath
@@ -19,11 +19,14 @@ func shell(_ launchPath: String, _ arguments: [String], completion: @escaping (S
         
         let data = pipe.fileHandleForReading.readDataToEndOfFile()
         let output = String(data: data, encoding: .utf8)?.trimmingCharacters(in: .whitespacesAndNewlines)
-        completion(output)
+        guard let completionHandler = completionHandler else {
+            return
+        }
+        completionHandler(output)
     }
 }
 
-func interactiveShell(_ launchPath: String, _ arguments: [String], progress: @escaping (String) -> Void) {
+func interactiveShell(_ launchPath: String, _ arguments: [String], progressHandler: ((String) -> Void)?) {
     DispatchQueue.global().async {
         let task = Process()
         task.launchPath = launchPath
@@ -34,9 +37,11 @@ func interactiveShell(_ launchPath: String, _ arguments: [String], progress: @es
         
         pipe.fileHandleForReading.readabilityHandler = { (fileHandle) -> Void in
             let availableData = fileHandle.availableData
-            if let newOutput = String(data: availableData, encoding: .utf8) {
-                progress(newOutput)
+            guard let newOutput = String(data: availableData, encoding: .utf8),
+               let progressHandler = progressHandler else {
+                return
             }
+            progressHandler(newOutput)
         }
         
         task.launch()
