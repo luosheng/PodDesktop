@@ -21,7 +21,9 @@ struct Sidebar: View {
         }
         .toolbar {
             ToolbarItem(placement: .status) {
-                Button(action: {}) {
+                Button(action: {
+                    NSApp.keyWindow?.firstResponder?.tryToPerform(#selector(NSSplitViewController.toggleSidebar(_:)), with: nil)
+                }) {
                     Image(systemSymbol: .sidebarLeading)
                 }
             }
