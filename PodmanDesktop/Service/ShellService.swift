@@ -26,7 +26,6 @@ final class ShellService {
             task.launchPath = launchPath
             task.arguments = arguments
             task.environment = self.environment
-            print(task.environment)
             
             let pipe = Pipe()
             task.standardOutput = pipe
@@ -63,6 +62,8 @@ final class ShellService {
                                         .map { $0.split(separator: "=") }
                                         .map { (String($0[0]), String($0[1])) })
         environment["HOME"] = FileManager.default.homeDirectoryForCurrentUser.path
+        environment["TMPDIR"] = FileManager.default.temporaryDirectory.path
+        environment["USER"] = NSUserName()
         return environment
     }
     
