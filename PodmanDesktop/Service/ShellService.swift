@@ -58,10 +58,12 @@ final class ShellService {
     }
     
     private func parseEnvironment(_ output: String) -> [String: String] {
-        return Dictionary(uniqueKeysWithValues: output
-                            .split(separator: "\n")
-                            .map { $0.split(separator: "=") }
-                            .map { (String($0[0]), String($0[1])) })
+        var environment = Dictionary(uniqueKeysWithValues: output
+                                        .split(separator: "\n")
+                                        .map { $0.split(separator: "=") }
+                                        .map { (String($0[0]), String($0[1])) })
+        environment["HOME"] = FileManager.default.homeDirectoryForCurrentUser.path
+        return environment
     }
     
 }
