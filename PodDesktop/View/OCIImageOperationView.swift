@@ -45,6 +45,7 @@ struct OCIImageOperationView: View {
                     buildImage()
                 }
             }
+            Spacer()
         }
         .padding()
     }
