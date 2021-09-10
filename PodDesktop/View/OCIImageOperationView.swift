@@ -14,6 +14,7 @@ struct OCIImageOperationView: View {
     @State var imageToBuild: String = ""
     @State var dockerFilePath: String = ""
     @State var contextPath: String = ""
+    @State var dockerImagePath: String = ""
     
     var body: some View {
         Form {
@@ -50,6 +51,23 @@ struct OCIImageOperationView: View {
                 }) {
                     Image(systemSymbol: .hammer)
                     Text("Build")
+                }
+            }
+            Divider()
+            Section(header: Text("Load Image")
+                        .font(.headline)
+            ) {
+                HStack {
+                    TextField("Docker image archive path", text: $dockerImagePath)
+                    Button("...") {
+                        self.browseFile()
+                    }
+                }
+                Button(action: {
+                    buildImage()
+                }) {
+                    Image(systemSymbol: .squareAndArrowDown)
+                    Text("Load")
                 }
             }
             Spacer()
