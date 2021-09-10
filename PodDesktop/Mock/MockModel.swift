@@ -17,6 +17,6 @@ final class MockModel {
         containerStore.containers = [loadMock("containers.json")]
         
         imageStore = ImageStore()
-        imageStore.images = loadMock("images.json")
+        imageStore.images = [loadMock("images.json")]
     }
 }
