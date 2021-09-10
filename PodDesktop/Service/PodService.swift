@@ -84,4 +84,8 @@ final class PodService {
     func removeImage(image: OCIImage) {
         runCommand(["rmi", image.id])
     }
+    
+    func pullImage(imageName: String) {
+        runCommand(["pull", imageName])
+    }
 }

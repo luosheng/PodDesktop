@@ -19,7 +19,7 @@ struct OCIImageHeader: View {
             HStack {
                 TextField("Name of image to pull", text: $imageToPull)
                 Button("Pull Image") {
-                    print(imageToPull)
+                    PodService.instance.pullImage(imageName: imageToPull)
                 }
             }
             HStack {
