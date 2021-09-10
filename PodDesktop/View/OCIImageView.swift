@@ -15,6 +15,11 @@ struct OCIImageView: View {
     
     var body: some View {
         VStack {
+            List() {
+                ForEach(imageStore.images) { image in
+                    OCIImageItem(image: image)
+                }
+            }
             Text("Image Acquistition")
                 .font(.title)
             HStack {
@@ -30,6 +35,9 @@ struct OCIImageView: View {
                 }
             }
         }
+        .onAppear(perform: {
+            imageStore.fetch()
+        })
         .padding()
     }
     

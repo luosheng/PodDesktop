@@ -23,4 +23,10 @@ struct OCIImage: Decodable, Identifiable {
         case createdSince = "CreatedSince"
         case createdAt = "CreatedAt"
     }
+    
+    static func parse(output: String) -> [OCIImage] {
+        return output.split(separator: "\n")
+            .filter { $0.starts(with: "{") }
+            .map { decode(OCIImage.self, from: String($0)) }
+    }
 }
