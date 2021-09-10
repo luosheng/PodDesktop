@@ -31,13 +31,13 @@ struct OCIImageOperationView: View {
                 TextField("Name of image to build", text: $imageToBuild)
                 HStack {
                     TextField("Dockerfile path", text: $dockerFilePath)
-                    Button("Browse...") {
+                    Button("...") {
                         self.browseFile()
                     }
                 }
                 HStack {
                     TextField("Context path", text: $contextPath)
-                    Button("Browse...") {
+                    Button("...") {
                         self.browseDir()
                     }
                 }
