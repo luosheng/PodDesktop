@@ -11,6 +11,7 @@
 		B32B175526EB093B00E0DD53 /* events.log in Resources */ = {isa = PBXBuildFile; fileRef = B32B175426EB093B00E0DD53 /* events.log */; };
 		B392EB4826EB243700602A47 /* OCIImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B392EB4726EB243700602A47 /* OCIImageItem.swift */; };
 		B392EB4A26EB2C6200602A47 /* OCIImageOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B392EB4926EB2C6200602A47 /* OCIImageOperationView.swift */; };
+		B392EB4D26EB48C100602A47 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = B392EB4C26EB48C100602A47 /* AlertToast */; };
 		B3AD754D26E6FE5C00F7E695 /* PodDesktopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD754C26E6FE5C00F7E695 /* PodDesktopApp.swift */; };
 		B3AD754F26E6FE5C00F7E695 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD754E26E6FE5C00F7E695 /* ContentView.swift */; };
 		B3AD755126E6FE6000F7E695 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3AD755026E6FE6000F7E695 /* Assets.xcassets */; };
@@ -68,6 +69,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3E2087D26E7BDCB0036A0FD /* SFSafeSymbols in Frameworks */,
+				B392EB4D26EB48C100602A47 /* AlertToast in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +214,7 @@
 			name = PodDesktop;
 			packageProductDependencies = (
 				B3E2087C26E7BDCB0036A0FD /* SFSafeSymbols */,
+				B392EB4C26EB48C100602A47 /* AlertToast */,
 			);
 			productName = PodDesktop;
 			productReference = B3AD754926E6FE5C00F7E695 /* PodDesktop.app */;
@@ -242,6 +245,7 @@
 			mainGroup = B3AD754026E6FE5C00F7E695;
 			packageReferences = (
 				B3E2087B26E7BDCB0036A0FD /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
+				B392EB4B26EB48C100602A47 /* XCRemoteSwiftPackageReference "AlertToast" */,
 			);
 			productRefGroup = B3AD754A26E6FE5C00F7E695 /* Products */;
 			projectDirPath = "";
@@ -483,6 +487,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B392EB4B26EB48C100602A47 /* XCRemoteSwiftPackageReference "AlertToast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/elai950/AlertToast.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.0;
+			};
+		};
 		B3E2087B26E7BDCB0036A0FD /* XCRemoteSwiftPackageReference "SFSafeSymbols" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/piknotech/SFSafeSymbols";
@@ -494,6 +506,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B392EB4C26EB48C100602A47 /* AlertToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B392EB4B26EB48C100602A47 /* XCRemoteSwiftPackageReference "AlertToast" */;
+			productName = AlertToast;
+		};
 		B3E2087C26E7BDCB0036A0FD /* SFSafeSymbols */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B3E2087B26E7BDCB0036A0FD /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
