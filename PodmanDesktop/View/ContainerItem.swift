@@ -14,7 +14,7 @@ struct ContainerItem: View {
     @State private var hovering = false
     
     var isRunning: Bool {
-        container.state == "running"
+        container.status == "Up"
     }
     
     var body: some View {
@@ -25,7 +25,7 @@ struct ContainerItem: View {
                 .foregroundColor(isRunning ? .accentColor : .gray)
             VStack(alignment: .leading) {
                 HStack {
-                    Text(container.names.joined(separator: ","))
+                    Text(container.names)
                         .font(.headline)
                         .foregroundColor(.primary)
                     Text(container.image)
@@ -36,7 +36,7 @@ struct ContainerItem: View {
                     Text(container.status)
                         .font(.caption)
                         .foregroundColor(.secondary)
-                    Text(container.readablePorts)
+                    Text(container.ports)
                         .font(.caption)
                         .foregroundColor(.secondary)
                 }

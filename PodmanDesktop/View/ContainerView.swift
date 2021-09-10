@@ -15,7 +15,6 @@ struct ContainerView: View {
         case none = "None"
         case name = "Name"
         case image = "Image"
-        case startedTime = "Started Time"
         case status = "Status"
         
         var id: Sorter { self }
@@ -24,13 +23,11 @@ struct ContainerView: View {
     var sortedContainers: [Container] {
         switch sorter {
         case .name:
-            return containerStore.containers.sorted { $0.names[0] > $1.names[0] }
+            return containerStore.containers.sorted { $0.names > $1.names }
         case .image:
             return containerStore.containers.sorted { $0.image > $1.image }
-        case .startedTime:
-            return containerStore.containers.sorted { $0.startedAt > $1.startedAt }
         case .status:
-            return containerStore.containers.sorted { $0.status > $1.state }
+            return containerStore.containers.sorted { $0.status > $1.status }
         default:
             return containerStore.containers
         }
