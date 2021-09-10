@@ -17,7 +17,7 @@ struct Sidebar: View {
                         .font(.title2)
                 }
                 NavigationLink(
-                    destination: ImageView(imageStore: ImageStore())) {
+                    destination: OCIImageView(imageStore: ImageStore())) {
                     Text("Images")
                         .font(.title2)
                 }

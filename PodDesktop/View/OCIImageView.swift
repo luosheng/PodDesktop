@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ImageView: View {
+struct OCIImageView: View {
     
     @ObservedObject var imageStore: ImageStore
     @State var imageToPull: String = ""
@@ -55,6 +55,6 @@ struct ImageView: View {
 
 struct ImageView_Previews: PreviewProvider {
     static var previews: some View {
-        ImageView(imageStore: MockModel().imageStore)
+        OCIImageView(imageStore: MockModel().imageStore)
     }
 }
