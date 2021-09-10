@@ -41,6 +41,7 @@ final class PodService {
                 .filter { $0.trimmingCharacters(in: .whitespacesAndNewlines) != "" }
                 .map(Event.parse(output:))
             events?.forEach { event in
+                print(event)
                 self.listeners.forEach { $0(event) }
             }
         }

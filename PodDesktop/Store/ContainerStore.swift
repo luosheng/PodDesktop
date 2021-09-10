@@ -13,7 +13,6 @@ final class ContainerStore: ObservableObject {
     
     init() {
         PodService.instance.addEventListener { event in
-            print(event)
             self.fetch()
         }
     }
