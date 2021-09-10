@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import AlertToast
 
 struct OCIImageItem: View {
     
     var image: OCIImage
     @State private var hovering = false
+    @State private var showToast = false
     
     var body: some View {
         HStack {
@@ -32,6 +34,7 @@ struct OCIImageItem: View {
                 Button(action: {
                     NSPasteboard.general.clearContents()
                     NSPasteboard.general.setString(image.id, forType: .string)
+                    showToast.toggle()
                 }) {
                     Image(systemSymbol: .paperclipCircle)
                         .resizable()
@@ -55,6 +58,9 @@ struct OCIImageItem: View {
         .onHover(perform: { hovering in
             self.hovering = hovering
         })
+        .toast(isPresenting: $showToast) {
+            AlertToast(type: .regular, title: "Image id \(image.id) copied")
+        }
     }
 }
 
