@@ -19,7 +19,7 @@ final class ShellService {
         self.setEnvironment()
     }
     
-    private func _shell(_ launchPath: String, _ arguments: [String], _ completion: CompletionHandler?) {
+    func run(_ launchPath: String, _ arguments: [String], _ completion: CompletionHandler?) {
         DispatchQueue.global().async {
             let task = Process()
             task.launchPath = launchPath
@@ -41,7 +41,7 @@ final class ShellService {
     }
     
     private func setEnvironment() {
-        _shell("/bin/bash", ["-l", "-c", "printenv"]) { output in
+        run("/bin/bash", ["-l", "-c", "printenv"]) { output in
             self.environment = Dictionary(uniqueKeysWithValues: output
                     .split(separator: "\n")
                     .map { $0.split(separator: "=") }
