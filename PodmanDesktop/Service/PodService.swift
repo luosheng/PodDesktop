@@ -63,7 +63,9 @@ final class PodService {
     }
     
     func restartContainer(container: Container) {
-        runCommand(["restart", container.id])
+        runCommand(["stop", container.id]) { _ in
+            self.runCommand(["start", container.id])
+        }
     }
     
     func stopContainer(container: Container) {
