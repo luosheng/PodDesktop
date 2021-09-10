@@ -88,4 +88,8 @@ final class PodService {
     func pullImage(imageName: String) {
         runCommand(["pull", imageName])
     }
+    
+    func buildImage(fileUrl: URL, contextUrl: URL, tag: String) {
+        runCommand(["build", "-f", "'\(fileUrl.path)'", "-t", tag, "'\(contextUrl.path)'"])
+    }
 }

@@ -34,23 +34,39 @@ struct OCIImageHeader: View {
     }
     
     private func browseFile() {
-        let dialog = NSOpenPanel()
-        
-        dialog.title                   = "Choose a Docker file"
-        dialog.showsResizeIndicator    = true
-        dialog.showsHiddenFiles        = false
-        dialog.canChooseDirectories    = false
-        dialog.canCreateDirectories    = false
-        dialog.allowsMultipleSelection = false
-        
-        if (dialog.runModal() == NSApplication.ModalResponse.OK) {
-            let result = dialog.url // Pathname of the file
-            if let path = result?.path {
-                print("build -f \(path) -t \(imageToBuild)")
+        let fileDialog = NSOpenPanel()
+        fileDialog.title = "Choose a Docker file"
+        if (fileDialog.runModal() == NSApplication.ModalResponse.OK) {
+            let ctxDialog = NSOpenPanel()
+            ctxDialog.canChooseFiles = false
+            ctxDialog.canChooseDirectories = true
+            ctxDialog.title = "Choose context path"
+            if (ctxDialog.runModal() == NSApplication.ModalResponse.OK) {
+                guard let fileUrl = fileDialog.url,
+                      let contextUrl = ctxDialog.url else {
+                    return
+                }
+                PodService.instance.buildImage(fileUrl: fileUrl, contextUrl: contextUrl, tag: imageToBuild)
             }
-        } else {
-            return
         }
+//
+//        let dialog = NSOpenPanel()
+//
+//        dialog.title = "Choose a Docker file"
+//        dialog.showsResizeIndicator = true
+//        dialog.showsHiddenFiles = false
+//        dialog.canChooseDirectories = false
+//        dialog.canCreateDirectories = false
+//        dialog.allowsMultipleSelection = false
+//
+//        if (dialog.runModal() == NSApplication.ModalResponse.OK) {
+//            let result = dialog.url
+//            if let path = result?.path {
+//
+//            }
+//        } else {
+//            return
+//        }
     }
 }
 
