@@ -20,7 +20,7 @@
 		B3AD757126E71A7600F7E695 /* containers.json in Resources */ = {isa = PBXBuildFile; fileRef = B3AD757026E71A7600F7E695 /* containers.json */; };
 		B3AD757326E71B2A00F7E695 /* MockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD757226E71B2A00F7E695 /* MockModel.swift */; };
 		B3AD757626E732EE00F7E695 /* ContainerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD757526E732EE00F7E695 /* ContainerItem.swift */; };
-		B3AD757926E7409300F7E695 /* PodmanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD757826E7409300F7E695 /* PodmanService.swift */; };
+		B3AD757926E7409300F7E695 /* PodService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD757826E7409300F7E695 /* PodService.swift */; };
 		B3AD757B26E7593800F7E695 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD757A26E7593800F7E695 /* Event.swift */; };
 		B3AD757D26E75BB800F7E695 /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD757C26E75BB800F7E695 /* Json.swift */; };
 		B3AD758126E766AA00F7E695 /* images.json in Resources */ = {isa = PBXBuildFile; fileRef = B3AD758026E766AA00F7E695 /* images.json */; };
@@ -47,7 +47,7 @@
 		B3AD757026E71A7600F7E695 /* containers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = containers.json; sourceTree = "<group>"; };
 		B3AD757226E71B2A00F7E695 /* MockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockModel.swift; sourceTree = "<group>"; };
 		B3AD757526E732EE00F7E695 /* ContainerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerItem.swift; sourceTree = "<group>"; };
-		B3AD757826E7409300F7E695 /* PodmanService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodmanService.swift; sourceTree = "<group>"; };
+		B3AD757826E7409300F7E695 /* PodService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodService.swift; sourceTree = "<group>"; };
 		B3AD757A26E7593800F7E695 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		B3AD757C26E75BB800F7E695 /* Json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Json.swift; sourceTree = "<group>"; };
 		B3AD758026E766AA00F7E695 /* images.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = images.json; sourceTree = "<group>"; };
@@ -171,7 +171,7 @@
 		B3AD757726E7408400F7E695 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				B3AD757826E7409300F7E695 /* PodmanService.swift */,
+				B3AD757826E7409300F7E695 /* PodService.swift */,
 				B32B175226EAF7EE00E0DD53 /* ShellService.swift */,
 			);
 			path = Service;
@@ -276,7 +276,7 @@
 				B3AD756026E6FF2D00F7E695 /* Sidebar.swift in Sources */,
 				B3AD757326E71B2A00F7E695 /* MockModel.swift in Sources */,
 				B3AD756E26E7171B00F7E695 /* ContainerStore.swift in Sources */,
-				B3AD757926E7409300F7E695 /* PodmanService.swift in Sources */,
+				B3AD757926E7409300F7E695 /* PodService.swift in Sources */,
 				B3AD754D26E6FE5C00F7E695 /* PodmanDesktopApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

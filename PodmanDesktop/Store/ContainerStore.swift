@@ -12,14 +12,14 @@ final class ContainerStore: ObservableObject {
     @Published var containers: [Container] = []
     
     init() {
-        PodmanService.instance.addEventListener { event in
+        PodService.instance.addEventListener { event in
             print(event)
             self.fetch()
         }
     }
     
     func fetch() {
-        PodmanService.instance.fetchContainers { containers in
+        PodService.instance.fetchContainers { containers in
             DispatchQueue.main.async {
                 self.containers = containers
             }

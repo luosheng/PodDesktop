@@ -12,13 +12,13 @@ final class ImageStore: ObservableObject {
     @Published var images: [PodmanImage] = []
     
     init() {
-        PodmanService.instance.addEventListener { event in
+        PodService.instance.addEventListener { event in
             self.fetch()
         }
     }
     
     func fetch() {
-        PodmanService.instance.fetchImages { images in
+        PodService.instance.fetchImages { images in
             DispatchQueue.main.async {
                 self.images = images
             }

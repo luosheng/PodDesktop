@@ -44,7 +44,7 @@ struct ContainerItem: View {
             Spacer()
             HStack {
                 Button(action: {
-                    PodmanService.instance.restartContainer(container: container)
+                    PodService.instance.restartContainer(container: container)
                 }) {
                     Image(systemSymbol: .arrowClockwiseCircle)
                         .resizable()
@@ -56,7 +56,7 @@ struct ContainerItem: View {
                 
                 if (isRunning) {
                     Button(action: {
-                        PodmanService.instance.stopContainer(container: container)
+                        PodService.instance.stopContainer(container: container)
                     }) {
                         Image(systemSymbol: .stopCircle)
                             .resizable()
@@ -66,7 +66,7 @@ struct ContainerItem: View {
                     .frame(width: 24, height: 24)
                 } else {
                     Button(action: {
-                        PodmanService.instance.startContainer(container: container)
+                        PodService.instance.startContainer(container: container)
                     }) {
                         Image(systemSymbol: .playCircle)
                             .resizable()
@@ -77,7 +77,7 @@ struct ContainerItem: View {
                 }
                 
                 Button(action: {
-                    PodmanService.instance.removeContainer(container: container)
+                    PodService.instance.removeContainer(container: container)
                 }) {
                     Image(systemSymbol: .trashCircle)
                         .resizable()

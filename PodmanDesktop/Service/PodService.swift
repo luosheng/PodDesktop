@@ -7,14 +7,14 @@
 
 import Foundation
 
-final class PodmanService {
+final class PodService {
     
     typealias EventListener = (Event) -> Void
     
     private var limaPath = "/usr/local/bin/lima"
     private var listeners: [EventListener] = []
     
-    static let instance = PodmanService()
+    static let instance = PodService()
     
     private func runCommand(_ args: [String], completion: ((String) -> Void)?) {
         ShellService.instance.run("/bin/bash", ["-l", "-c", (["lima", "nerdctl"] + args).joined(separator: " ")], completion)
