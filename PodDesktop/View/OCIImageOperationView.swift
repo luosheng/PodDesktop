@@ -37,13 +37,24 @@ struct OCIImageOperationView: View {
                 HStack {
                     TextField("Dockerfile path", text: $dockerFilePath)
                     Button("...") {
-                        self.browseFile()
+                        self.browse({ dialog in
+                            dialog.title = "Choose a Docker file"
+                        }) { url in
+                            dockerFilePath = url.path
+                            contextPath = url.deletingLastPathComponent().path
+                        }
                     }
                 }
                 HStack {
                     TextField("Context path", text: $contextPath)
                     Button("...") {
-                        self.browseDir()
+                        self.browse({ dialog in
+                            dialog.title = "Choose context path"
+                            dialog.canChooseFiles = false
+                            dialog.canChooseDirectories = true
+                        }) { url in
+                            contextPath = url.path
+                        }
                     }
                 }
                 Button(action: {
@@ -60,7 +71,12 @@ struct OCIImageOperationView: View {
                 HStack {
                     TextField("Docker image archive path", text: $dockerImagePath)
                     Button("...") {
-                        self.browseFile()
+                        self.browse({ dialog in
+                            dialog.title = "Choose context path"
+                            dialog.allowedFileTypes = ["tar", "zip"]
+                        }) { url in
+                            dockerImagePath = url.path
+                        }
                     }
                 }
                 Button(action: {
@@ -75,28 +91,16 @@ struct OCIImageOperationView: View {
         .padding()
     }
     
-    private func browseFile() {
+    private func browse(_ config: ((NSOpenPanel) -> Void)?, completion: (URL) -> Void) {
         let dialog = NSOpenPanel()
-        dialog.title = "Choose a Docker file"
-        if (dialog.runModal() == NSApplication.ModalResponse.OK) {
-            guard let url = dialog.url else {
-                return
-            }
-            dockerFilePath = url.path
-            contextPath = url.deletingLastPathComponent().path
+        if let config = config {
+            config(dialog)
         }
-    }
-    
-    private func browseDir() {
-        let dialog = NSOpenPanel()
-        dialog.title = "Choose a Docker file"
-        dialog.canChooseFiles = false
-        dialog.canChooseDirectories = true
         if (dialog.runModal() == NSApplication.ModalResponse.OK) {
             guard let url = dialog.url else {
                 return
             }
-            contextPath = url.path
+            completion(url)
         }
     }
     
