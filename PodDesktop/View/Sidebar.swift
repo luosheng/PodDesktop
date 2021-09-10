@@ -16,6 +16,11 @@ struct Sidebar: View {
                     Text("Containers")
                         .font(.title2)
                 }
+                NavigationLink(
+                    destination: ImageView(imageStore: ImageStore())) {
+                    Text("Images")
+                        .font(.title2)
+                }
             }
             .listStyle(SidebarListStyle())
         }

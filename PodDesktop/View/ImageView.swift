@@ -10,9 +10,46 @@ import SwiftUI
 struct ImageView: View {
     
     @ObservedObject var imageStore: ImageStore
+    @State var imageToPull: String = ""
+    @State var imageToBuild: String = ""
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("Image Acquistition")
+                .font(.title)
+            HStack {
+                TextField("Name of image to pull", text: $imageToPull)
+                Button("Pull Image") {
+                    print(imageToPull)
+                }
+            }
+            HStack {
+                TextField("Name of image to build", text: $imageToBuild)
+                Button("Build Image...") {
+                    self.browseFile()
+                }
+            }
+        }
+    }
+    
+    private func browseFile() {
+        let dialog = NSOpenPanel()
+            
+        dialog.title                   = "Choose a Docker file"
+        dialog.showsResizeIndicator    = true
+        dialog.showsHiddenFiles        = false
+        dialog.canChooseDirectories    = false
+        dialog.canCreateDirectories    = false
+        dialog.allowsMultipleSelection = false
+
+        if (dialog.runModal() == NSApplication.ModalResponse.OK) {
+            let result = dialog.url // Pathname of the file
+            if let path = result?.path {
+                print("build -f \(path) -t \(imageToBuild)")
+            }
+        } else {
+            return
+        }
     }
 }
 
