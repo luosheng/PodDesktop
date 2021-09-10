@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct OCIImageHeader: View {
+struct OCIImageOperationView: View {
     
     @State var imageToPull: String = ""
     @State var imageToBuild: String = ""
@@ -81,6 +81,6 @@ struct OCIImageHeader: View {
 
 struct OCIImageHeader_Previews: PreviewProvider {
     static var previews: some View {
-        OCIImageHeader()
+        OCIImageOperationView()
     }
 }

@@ -21,7 +21,7 @@ struct OCIImageView: View {
                 }
             }
             
-            OCIImageHeader()
+            OCIImageOperationView()
         }
         .onAppear(perform: {
             imageStore.fetch()
