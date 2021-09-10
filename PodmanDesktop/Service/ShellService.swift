@@ -13,6 +13,8 @@ final class ShellService {
     
     var environment: [String: String] = [:]
     
+    static let instance = ShellService()
+    
     init() {
         self.setEnvironment()
     }
