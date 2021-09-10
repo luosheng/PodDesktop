@@ -10,6 +10,7 @@ import SwiftUI
 struct ContainerView: View {
     @ObservedObject var containerStore: ContainerStore
     @State private var sorter = Sorter.none
+    @State private var keyword = ""
     
     enum Sorter: String, CaseIterable, Identifiable {
         case none = "None"
@@ -33,13 +34,24 @@ struct ContainerView: View {
         }
     }
     
-    var body: some View {
-        List() {
-            ForEach(sortedContainers) { container in
-                ContainerItem(container: container)
-            }
+    var filteredContainers: [Container] {
+        sortedContainers.filter {
+            keyword == "" || $0.names.contains(keyword) || $0.id.contains(keyword)
         }
-        .listStyle(InsetListStyle())
+    }
+    
+    var body: some View {
+        VStack {
+            TextField("Search", text: $keyword)
+                .padding()
+            List() {
+                ForEach(filteredContainers) { container in
+                    ContainerItem(container: container)
+                }
+            }
+            .listStyle(InsetListStyle())
+        }
+        .background(Color.white)
         .onAppear(perform: {
             containerStore.fetch()
         })
@@ -53,7 +65,6 @@ struct ContainerView: View {
                     }
                 }
             }
-            
         }
         
     }
