@@ -25,10 +25,7 @@ final class PodService {
     }
     
     init() {
-        shell("/bin/zsh", ["-l", "-c", "which lima"]) { path in
-            guard let path = path else {
-                return
-            }
+        ShellService.instance.run("/bin/zsh", ["-l", "-c", "which lima"]) { path in
             self.limaPath = path
             self.startWatchingEvents()
         }
