@@ -16,6 +16,14 @@ final class PodmanService {
     
     static let instance = PodmanService()
     
+    private func runCommand(_ args: String..., completion: ((String?) -> Void)?) {
+        shell(podmanPath, args, completion)
+    }
+    
+    private func runCommand(_ args: String...) {
+        shell(podmanPath, args)
+    }
+    
     init() {
         shell("/bin/bash", ["-l", "-c", "which podman"]) { path in
             guard let path = path else {
@@ -43,7 +51,7 @@ final class PodmanService {
     }
     
     func fetchContainers(completion: @escaping ([Container]) -> Void) {
-        shell(podmanPath, ["ps", "-a", "--format", "{{json}}"]) { json in
+        runCommand("ps", "-a", "--format", "{{json}}") { json in
             guard let json = json else {
                 completion([])
                 return
@@ -53,7 +61,7 @@ final class PodmanService {
     }
     
     func fetchImages(completion: @escaping ([PodmanImage]) -> Void) {
-        shell(podmanPath, ["images", "--format", "{{json}}"]) { json in
+        runCommand("images", "--format", "{{json}}") { json in
             guard let json = json else {
                 completion([])
                 return
@@ -63,18 +71,18 @@ final class PodmanService {
     }
     
     func restartContainer(container: Container) {
-        shell(podmanPath, ["restart", container.id])
+        runCommand("restart", container.id)
     }
     
     func stopContainer(container: Container) {
-        shell(podmanPath, ["stop", container.id])
+        runCommand("stop", container.id)
     }
     
     func startContainer(container: Container) {
-        shell(podmanPath, ["start", container.id])
+        runCommand("restart", container.id)
     }
     
     func removeContainer(container: Container) {
-        shell(podmanPath, ["rm", container.id])
+        runCommand("rm", container.id)
     }
 }
