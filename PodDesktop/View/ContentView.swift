@@ -14,7 +14,7 @@ struct ContentView: View {
     
     var body: some View {
         Sidebar()
-            .toast(isPresenting: $globalStore.toastState.showToast) {
+            .toast(isPresenting: $globalStore.toastState.showToast, duration: 1.0) {
                 AlertToast(type: globalStore.toastState.type, title: globalStore.toastState.message)
             }
     }
