@@ -16,6 +16,8 @@ struct OCIImageOperationView: View {
     @State var contextPath: String = ""
     @State var dockerImagePath: String = ""
     
+    @State var alertDisplayed: Bool = false
+    
     var body: some View {
         Form {
             Section(header: Text("Pull Image")
@@ -80,10 +82,16 @@ struct OCIImageOperationView: View {
                     }
                 }
                 Button(action: {
-                    buildImage()
+                    alertDisplayed.toggle()
                 }) {
                     Image(systemSymbol: .squareAndArrowDown)
                     Text("Load")
+                }
+                .alert(isPresented: $alertDisplayed) {
+                    Alert(
+                        title: Text("Stay tuned"),
+                        message: Text("Loading images is not yet supported by nerdctl")
+                    )
                 }
             }
             Spacer()
