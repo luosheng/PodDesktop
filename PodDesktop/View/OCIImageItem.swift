@@ -10,19 +10,40 @@ import SwiftUI
 struct OCIImageItem: View {
     
     var image: OCIImage
+    @State private var hovering = false
     
     var body: some View {
-        VStack(alignment: .leading) {
-            HStack {
-                Text(image.repository + ":" + image.tag)
-                    .font(.headline)
-                Text(image.id)
+        HStack {
+            VStack(alignment: .leading) {
+                HStack {
+                    Text(image.repository + ":" + image.tag)
+                        .font(.headline)
+                    Text(image.id)
+                }
+                HStack {
+                    Text(image.createdSince)
+                    Text(image.size)
+                }
             }
+            
+            Spacer()
+            
             HStack {
-                Text(image.createdSince)
-                Text(image.size)
+                Button(action: {
+//                    PodService.instance.removeContainer(container: container)
+                }) {
+                    Image(systemSymbol: .trashCircle)
+                        .resizable()
+                        .foregroundColor(.accentColor)
+                }
+                .buttonStyle(PlainButtonStyle())
+                .frame(width: 24, height: 24)
             }
+            .opacity(hovering ? 1.0 : 0.0)
         }
+        .onHover(perform: { hovering in
+            self.hovering = hovering
+        })
     }
 }
 
