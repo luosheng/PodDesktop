@@ -9,7 +9,7 @@ import Foundation
 
 final class ImageStore: ObservableObject {
     
-    @Published var images: [PodmanImage] = []
+    @Published var images: [OCIImage] = []
     
     init() {
         PodService.instance.addEventListener { event in

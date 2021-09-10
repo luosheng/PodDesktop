@@ -56,9 +56,9 @@ final class PodService {
         }
     }
     
-    func fetchImages(completion: @escaping ([PodmanImage]) -> Void) {
+    func fetchImages(completion: @escaping ([OCIImage]) -> Void) {
         runCommand(["images", "--format", "{{json}}"]) {json in
-            completion(decode([PodmanImage].self, from: json))
+            completion(decode([OCIImage].self, from: json))
         }
     }
     
