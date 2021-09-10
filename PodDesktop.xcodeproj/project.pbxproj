@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		B32B175326EAF7EE00E0DD53 /* ShellService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32B175226EAF7EE00E0DD53 /* ShellService.swift */; };
 		B32B175526EB093B00E0DD53 /* events.log in Resources */ = {isa = PBXBuildFile; fileRef = B32B175426EB093B00E0DD53 /* events.log */; };
-		B3AD754D26E6FE5C00F7E695 /* PodmanDesktopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD754C26E6FE5C00F7E695 /* PodmanDesktopApp.swift */; };
+		B3AD754D26E6FE5C00F7E695 /* PodDesktopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD754C26E6FE5C00F7E695 /* PodDesktopApp.swift */; };
 		B3AD754F26E6FE5C00F7E695 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD754E26E6FE5C00F7E695 /* ContentView.swift */; };
 		B3AD755126E6FE6000F7E695 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3AD755026E6FE6000F7E695 /* Assets.xcassets */; };
 		B3AD755426E6FE6000F7E695 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3AD755326E6FE6000F7E695 /* Preview Assets.xcassets */; };
@@ -34,13 +34,13 @@
 /* Begin PBXFileReference section */
 		B32B175226EAF7EE00E0DD53 /* ShellService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellService.swift; sourceTree = "<group>"; };
 		B32B175426EB093B00E0DD53 /* events.log */ = {isa = PBXFileReference; lastKnownFileType = text; path = events.log; sourceTree = "<group>"; };
-		B3AD754926E6FE5C00F7E695 /* PodmanDesktop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodmanDesktop.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B3AD754C26E6FE5C00F7E695 /* PodmanDesktopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodmanDesktopApp.swift; sourceTree = "<group>"; };
+		B3AD754926E6FE5C00F7E695 /* PodDesktop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodDesktop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3AD754C26E6FE5C00F7E695 /* PodDesktopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodDesktopApp.swift; sourceTree = "<group>"; };
 		B3AD754E26E6FE5C00F7E695 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B3AD755026E6FE6000F7E695 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3AD755326E6FE6000F7E695 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B3AD755526E6FE6000F7E695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B3AD755626E6FE6000F7E695 /* PodmanDesktop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PodmanDesktop.entitlements; sourceTree = "<group>"; };
+		B3AD755626E6FE6000F7E695 /* PodDesktop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PodDesktop.entitlements; sourceTree = "<group>"; };
 		B3AD755F26E6FF2D00F7E695 /* Sidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sidebar.swift; sourceTree = "<group>"; };
 		B3AD756426E7008500F7E695 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		B3AD756726E701FF00F7E695 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
@@ -73,7 +73,7 @@
 		B3AD754026E6FE5C00F7E695 = {
 			isa = PBXGroup;
 			children = (
-				B3AD754B26E6FE5C00F7E695 /* PodmanDesktop */,
+				B3AD754B26E6FE5C00F7E695 /* PodDesktop */,
 				B3AD754A26E6FE5C00F7E695 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -81,15 +81,15 @@
 		B3AD754A26E6FE5C00F7E695 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B3AD754926E6FE5C00F7E695 /* PodmanDesktop.app */,
+				B3AD754926E6FE5C00F7E695 /* PodDesktop.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B3AD754B26E6FE5C00F7E695 /* PodmanDesktop */ = {
+		B3AD754B26E6FE5C00F7E695 /* PodDesktop */ = {
 			isa = PBXGroup;
 			children = (
-				B3AD754C26E6FE5C00F7E695 /* PodmanDesktopApp.swift */,
+				B3AD754C26E6FE5C00F7E695 /* PodDesktopApp.swift */,
 				B3AD757726E7408400F7E695 /* Service */,
 				B3AD756F26E71A3700F7E695 /* Mock */,
 				B3AD756C26E7170400F7E695 /* Store */,
@@ -98,10 +98,10 @@
 				B3AD756926E70E3100F7E695 /* Helper */,
 				B3AD755026E6FE6000F7E695 /* Assets.xcassets */,
 				B3AD755526E6FE6000F7E695 /* Info.plist */,
-				B3AD755626E6FE6000F7E695 /* PodmanDesktop.entitlements */,
+				B3AD755626E6FE6000F7E695 /* PodDesktop.entitlements */,
 				B3AD755226E6FE6000F7E695 /* Preview Content */,
 			);
-			path = PodmanDesktop;
+			path = PodDesktop;
 			sourceTree = "<group>";
 		};
 		B3AD755226E6FE6000F7E695 /* Preview Content */ = {
@@ -191,9 +191,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B3AD754826E6FE5C00F7E695 /* PodmanDesktop */ = {
+		B3AD754826E6FE5C00F7E695 /* PodDesktop */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B3AD755926E6FE6000F7E695 /* Build configuration list for PBXNativeTarget "PodmanDesktop" */;
+			buildConfigurationList = B3AD755926E6FE6000F7E695 /* Build configuration list for PBXNativeTarget "PodDesktop" */;
 			buildPhases = (
 				B3AD754526E6FE5C00F7E695 /* Sources */,
 				B3AD754626E6FE5C00F7E695 /* Frameworks */,
@@ -203,12 +203,12 @@
 			);
 			dependencies = (
 			);
-			name = PodmanDesktop;
+			name = PodDesktop;
 			packageProductDependencies = (
 				B3E2087C26E7BDCB0036A0FD /* SFSafeSymbols */,
 			);
-			productName = PodmanDesktop;
-			productReference = B3AD754926E6FE5C00F7E695 /* PodmanDesktop.app */;
+			productName = PodDesktop;
+			productReference = B3AD754926E6FE5C00F7E695 /* PodDesktop.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -225,7 +225,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B3AD754426E6FE5C00F7E695 /* Build configuration list for PBXProject "PodmanDesktop" */;
+			buildConfigurationList = B3AD754426E6FE5C00F7E695 /* Build configuration list for PBXProject "PodDesktop" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -241,7 +241,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B3AD754826E6FE5C00F7E695 /* PodmanDesktop */,
+				B3AD754826E6FE5C00F7E695 /* PodDesktop */,
 			);
 		};
 /* End PBXProject section */
@@ -281,7 +281,7 @@
 				B3AD757326E71B2A00F7E695 /* MockModel.swift in Sources */,
 				B3AD756E26E7171B00F7E695 /* ContainerStore.swift in Sources */,
 				B3AD757926E7409300F7E695 /* PodService.swift in Sources */,
-				B3AD754D26E6FE5C00F7E695 /* PodmanDesktopApp.swift in Sources */,
+				B3AD754D26E6FE5C00F7E695 /* PodDesktopApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,20 +408,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = PodmanDesktop/PodmanDesktop.entitlements;
+				CODE_SIGN_ENTITLEMENTS = PodDesktop/PodDesktop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"PodmanDesktop/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"PodDesktop/Preview Content\"";
 				DEVELOPMENT_TEAM = 3HPW6LEDDN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = PodmanDesktop/Info.plist;
+				INFOPLIST_FILE = PodDesktop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pop-tap.PodmanDesktop";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pop-tap.PodDesktop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -432,20 +432,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = PodmanDesktop/PodmanDesktop.entitlements;
+				CODE_SIGN_ENTITLEMENTS = PodDesktop/PodDesktop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"PodmanDesktop/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"PodDesktop/Preview Content\"";
 				DEVELOPMENT_TEAM = 3HPW6LEDDN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = PodmanDesktop/Info.plist;
+				INFOPLIST_FILE = PodDesktop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pop-tap.PodmanDesktop";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pop-tap.PodDesktop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -454,7 +454,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B3AD754426E6FE5C00F7E695 /* Build configuration list for PBXProject "PodmanDesktop" */ = {
+		B3AD754426E6FE5C00F7E695 /* Build configuration list for PBXProject "PodDesktop" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B3AD755726E6FE6000F7E695 /* Debug */,
@@ -463,7 +463,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B3AD755926E6FE6000F7E695 /* Build configuration list for PBXNativeTarget "PodmanDesktop" */ = {
+		B3AD755926E6FE6000F7E695 /* Build configuration list for PBXNativeTarget "PodDesktop" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B3AD755A26E6FE6000F7E695 /* Debug */,
