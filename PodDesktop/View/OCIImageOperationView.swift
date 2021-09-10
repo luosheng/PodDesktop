@@ -15,19 +15,19 @@ struct OCIImageOperationView: View {
     @State var contextPath: String = ""
     
     var body: some View {
-        VStack(alignment: .leading) {
-            VStack(alignment: .leading) {
-                Text("Pull Image")
-                    .font(.headline)
+        Form {
+            Section(header: Text("Pull Image")
+                        .font(.headline)
+            ) {
                 TextField("Name of image to pull", text: $imageToPull)
                 Button("Pull") {
                     PodService.instance.pullImage(imageName: imageToPull)
                 }
             }
             Divider()
-            VStack(alignment: .leading) {
-                Text("Build Image")
-                    .font(.headline)
+            Section(header: Text("Build Image")
+                        .font(.headline)
+            ) {
                 TextField("Name of image to build", text: $imageToBuild)
                 HStack {
                     TextField("Dockerfile path", text: $dockerFilePath)
