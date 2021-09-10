@@ -13,13 +13,11 @@ struct Sidebar: View {
         NavigationView {
             List {
                 NavigationLink(destination: ContainerView(containerStore: ContainerStore())) {
-                    Text("Containers")
-                        .font(.title2)
+                    SidebarItem(title: "Containers")
                 }
                 NavigationLink(
                     destination: OCIImageView(imageStore: ImageStore())) {
-                    Text("Images")
-                        .font(.title2)
+                    SidebarItem(title: "Images")
                 }
             }
             .listStyle(SidebarListStyle())
