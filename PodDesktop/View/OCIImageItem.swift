@@ -30,6 +30,17 @@ struct OCIImageItem: View {
             
             HStack {
                 Button(action: {
+                    NSPasteboard.general.clearContents()
+                    NSPasteboard.general.setString(image.id, forType: .string)
+                }) {
+                    Image(systemSymbol: .paperclipCircle)
+                        .resizable()
+                        .foregroundColor(.accentColor)
+                }
+                .buttonStyle(PlainButtonStyle())
+                .frame(width: 24, height: 24)
+                
+                Button(action: {
                     PodService.instance.removeImage(image: image)
                 }) {
                     Image(systemSymbol: .trashCircle)
