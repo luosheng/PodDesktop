@@ -8,8 +8,8 @@
 import Foundation
 
 struct Event: Codable {
-    var containerId: String
-    var processId: Int32
+    var containerId: String?
+    var processId: Int32?
     var type: String!
     
     enum CodingKeys: String, CodingKey {
