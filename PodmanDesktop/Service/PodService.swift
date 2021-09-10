@@ -30,19 +30,19 @@ final class PodService {
                 return
             }
             self.limaPath = path
-            
-//            interactiveShell(self.podmanPath, ["events", "--format", "{{json}}"]) { output in
-//                let events = output.split(separator: "\n")
-//                    .map { $0.data(using: .utf8) }
-//                    .filter { $0 != .none }
-//                    .map { decode(Event.self, from: $0!) }
-//                events.forEach { event in
-//                    self.listeners.forEach { listener in
-//                        listener(event)
-//                    }
-//                }
-//
-//            }
+            self.startWatchingEvents()
+        }
+    }
+    
+    private func startWatchingEvents() {
+        ShellService.instance.runWithIntermediateOutput("/bin/bash", ["-l", "-c", "lima nerdctl events"]) { output in
+            let events = try? output.split(separator: "\n")
+                .map { String($0) }
+                .filter { $0.trimmingCharacters(in: .whitespacesAndNewlines) != "" }
+                .map(Event.parse(output:))
+            events?.forEach { event in
+                self.listeners.forEach { $0(event) }
+            }
         }
     }
     
