@@ -14,14 +14,13 @@ struct OCIImageHeader: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Image Acquistition")
-                .font(.title)
             HStack {
                 TextField("Name of image to pull", text: $imageToPull)
                 Button("Pull Image") {
                     PodService.instance.pullImage(imageName: imageToPull)
                 }
             }
+            Divider()
             HStack {
                 TextField("Name of image to build", text: $imageToBuild)
                 Button("Build Image...") {
@@ -30,7 +29,7 @@ struct OCIImageHeader: View {
             }
         }
         .padding()
-        .background(Color(red: 237.0 / 255.0, green: 242.0 / 255.0, blue: 247.0 / 255.0))
+//        .background(Color(red: 237.0 / 255.0, green: 242.0 / 255.0, blue: 247.0 / 255.0))
     }
     
     private func browseFile() {

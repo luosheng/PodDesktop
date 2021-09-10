@@ -14,11 +14,14 @@ struct OCIImageView: View {
     @State var imageToBuild: String = ""
     
     var body: some View {
-        List() {
-            OCIImageHeader()
-            ForEach(imageStore.images) { image in
-                OCIImageItem(image: image)
+        NavigationView {
+            List() {
+                ForEach(imageStore.images) { image in
+                    OCIImageItem(image: image)
+                }
             }
+            
+            OCIImageHeader()
         }
         .onAppear(perform: {
             imageStore.fetch()
