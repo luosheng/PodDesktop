@@ -26,4 +26,12 @@ struct Container: Codable, Identifiable {
         case ports = "Ports"
         case status = "Status"
     }
+    
+    static func parse(output: String) -> [Container] {
+        let lines = output.split(separator: "\n")
+        let containers = lines.map { line in
+            return decode(Container.self, from: String(line))
+        }
+        return containers
+    }
 }

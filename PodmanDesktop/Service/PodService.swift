@@ -52,11 +52,7 @@ final class PodService {
     
     func fetchContainers(completion: @escaping ([Container]) -> Void) {
         runCommand(["ps", "-a", "--format", "'{{json .}}'"]) { output in
-            let lines = output.split(separator: "\n")
-            let containers = lines.map { line in
-                return decode(Container.self, from: String(line))
-            }
-            completion(containers)
+            completion(Container.parse(output: output))
         }
     }
     
