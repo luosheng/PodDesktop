@@ -9,7 +9,7 @@ import Foundation
 
 final class ShellService {
     
-    typealias CompletionHandler = (String) -> Void
+    typealias OutputHandler = (String) -> Void
     
     var environment: [String: String] = [:]
     
@@ -20,7 +20,7 @@ final class ShellService {
         self.environment = self.parseEnvironment(output)
     }
     
-    func run(_ launchPath: String, _ arguments: [String], _ completion: CompletionHandler?) {
+    func run(_ launchPath: String, _ arguments: [String], _ completionHandler: OutputHandler?) {
         DispatchQueue.global().async {
             let task = Process()
             task.launchPath = launchPath
@@ -33,11 +33,34 @@ final class ShellService {
             
             let data = pipe.fileHandleForReading.readDataToEndOfFile()
             let output = String(data: data, encoding: .utf8)?.trimmingCharacters(in: .whitespacesAndNewlines)
-            guard let completion = completion,
+            guard let completionHandler = completionHandler,
                   let output = output else {
                 return
             }
-            completion(output)
+            completionHandler(output)
+        }
+    }
+    
+    func runWithIntermediateOutput(_ launchPath: String, _ arguments: [String], _ intermediateOuptputHandler: OutputHandler?) {
+        DispatchQueue.global().async {
+            let task = Process()
+            task.launchPath = launchPath
+            task.arguments = arguments
+            
+            let pipe = Pipe()
+            task.standardOutput = pipe
+            
+            pipe.fileHandleForReading.readabilityHandler = { (fileHandle) -> Void in
+                let availableData = fileHandle.availableData
+                guard let newOutput = String(data: availableData, encoding: .utf8),
+                   let intermediateOuptputHandler = intermediateOuptputHandler else {
+                    return
+                }
+                intermediateOuptputHandler(newOutput)
+            }
+            
+            task.launch()
+            task.waitUntilExit()
         }
     }
     
