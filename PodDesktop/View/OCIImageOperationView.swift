@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SFSafeSymbols
 
 struct OCIImageOperationView: View {
     
@@ -20,8 +21,11 @@ struct OCIImageOperationView: View {
                         .font(.headline)
             ) {
                 TextField("Name of image to pull", text: $imageToPull)
-                Button("Pull") {
+                Button(action: {
                     PodService.instance.pullImage(imageName: imageToPull)
+                }) {
+                    Image(systemSymbol: .arrowTrianglePull)
+                    Text("Pull")
                 }
             }
             Divider()
@@ -41,8 +45,11 @@ struct OCIImageOperationView: View {
                         self.browseDir()
                     }
                 }
-                Button("Build") {
+                Button(action: {
                     buildImage()
+                }) {
+                    Image(systemSymbol: .hammer)
+                    Text("Build")
                 }
             }
             Spacer()
