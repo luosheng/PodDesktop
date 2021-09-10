@@ -16,7 +16,7 @@ struct OCIImageItem: View {
         HStack {
             VStack(alignment: .leading) {
                 HStack {
-                    Text(image.repository + ":" + image.tag)
+                    Text(image.repositoryWithTag)
                         .font(.headline)
                     Text(image.id)
                 }

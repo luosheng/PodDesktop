@@ -29,4 +29,8 @@ struct OCIImage: Decodable, Identifiable {
             .filter { $0.starts(with: "{") }
             .map { decode(OCIImage.self, from: String($0)) }
     }
+    
+    var repositoryWithTag: String {
+        return "\(repository == "" ? "<none>" : repository):\(tag == "" ? "<none>" : tag)"
+    }
 }
