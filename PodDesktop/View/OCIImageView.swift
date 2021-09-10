@@ -20,9 +20,12 @@ struct OCIImageView: View {
                     OCIImageItem(image: image)
                 }
             }
+            .frame(minWidth: 500, maxWidth: .infinity)
             
             OCIImageOperationView()
+                .frame(minWidth: 300, idealWidth: 300, maxWidth: 300)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .onAppear(perform: {
             imageStore.fetch()
         })
