@@ -30,7 +30,7 @@ struct OCIImageItem: View {
             
             HStack {
                 Button(action: {
-//                    PodService.instance.removeContainer(container: container)
+                    PodService.instance.removeImage(image: image)
                 }) {
                     Image(systemSymbol: .trashCircle)
                         .resizable()

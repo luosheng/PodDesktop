@@ -80,4 +80,8 @@ final class PodService {
     func removeContainer(container: Container) {
         runCommand(["rm", container.id])
     }
+    
+    func removeImage(image: OCIImage) {
+        runCommand(["rmi", image.id])
+    }
 }
