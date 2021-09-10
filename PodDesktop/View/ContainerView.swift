@@ -41,23 +41,30 @@ struct ContainerView: View {
     }
     
     var body: some View {
-        VStack {
-            TextField("Search", text: $keyword)
-                .padding()
-            List() {
-                ForEach(filteredContainers) { container in
-                    ContainerItem(container: container)
-                }
+        List() {
+            ForEach(filteredContainers) { container in
+                ContainerItem(container: container)
             }
-            .listStyle(InsetListStyle())
         }
+        .listStyle(InsetListStyle())
         .background(Color.white)
         .onAppear(perform: {
             containerStore.fetch()
         })
         .navigationTitle("Containers")
         .toolbar {
-            ToolbarItem(placement: .principal) {
+            ToolbarItem {
+                Spacer()
+            }
+            ToolbarItem {
+                HStack {
+                    Image(systemSymbol: .magnifyingglass)
+                    TextField("Search", text: $keyword)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .frame(minWidth: 300)
+                }
+            }
+            ToolbarItem {
                 Picker("Sort by", selection: $sorter) {
                     ForEach(Sorter.allCases) { sorter in
                         Text(sorter.rawValue)

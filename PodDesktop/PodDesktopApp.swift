@@ -21,6 +21,6 @@ struct PodDesktopApp: App {
             SidebarCommands()
         }
         .windowStyle(HiddenTitleBarWindowStyle())
-        .windowToolbarStyle(UnifiedCompactWindowToolbarStyle())
+        .windowToolbarStyle(UnifiedWindowToolbarStyle())
     }
 }
