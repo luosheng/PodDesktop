@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B32B175326EAF7EE00E0DD53 /* ShellService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32B175226EAF7EE00E0DD53 /* ShellService.swift */; };
+		B32B175526EB093B00E0DD53 /* events.log in Resources */ = {isa = PBXBuildFile; fileRef = B32B175426EB093B00E0DD53 /* events.log */; };
 		B3AD754D26E6FE5C00F7E695 /* PodmanDesktopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD754C26E6FE5C00F7E695 /* PodmanDesktopApp.swift */; };
 		B3AD754F26E6FE5C00F7E695 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD754E26E6FE5C00F7E695 /* ContentView.swift */; };
 		B3AD755126E6FE6000F7E695 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3AD755026E6FE6000F7E695 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		B32B175226EAF7EE00E0DD53 /* ShellService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellService.swift; sourceTree = "<group>"; };
+		B32B175426EB093B00E0DD53 /* events.log */ = {isa = PBXFileReference; lastKnownFileType = text; path = events.log; sourceTree = "<group>"; };
 		B3AD754926E6FE5C00F7E695 /* PodmanDesktop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodmanDesktop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3AD754C26E6FE5C00F7E695 /* PodmanDesktopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodmanDesktopApp.swift; sourceTree = "<group>"; };
 		B3AD754E26E6FE5C00F7E695 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				B3AD757226E71B2A00F7E695 /* MockModel.swift */,
 				B3AD757026E71A7600F7E695 /* containers.json */,
 				B3AD758026E766AA00F7E695 /* images.json */,
+				B32B175426EB093B00E0DD53 /* events.log */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 			files = (
 				B3AD755426E6FE6000F7E695 /* Preview Assets.xcassets in Resources */,
 				B3AD758126E766AA00F7E695 /* images.json in Resources */,
+				B32B175526EB093B00E0DD53 /* events.log in Resources */,
 				B3AD755126E6FE6000F7E695 /* Assets.xcassets in Resources */,
 				B3AD757126E71A7600F7E695 /* containers.json in Resources */,
 			);
