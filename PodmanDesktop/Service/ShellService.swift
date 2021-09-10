@@ -16,7 +16,8 @@ final class ShellService {
     static let instance = ShellService()
     
     init() {
-        self.setEnvironment()
+        let output = run("/bin/bash", ["-l", "-c", "printenv"])
+        self.environment = self.parseEnvironment(output)
     }
     
     func run(_ launchPath: String, _ arguments: [String], _ completion: CompletionHandler?) {
@@ -25,6 +26,7 @@ final class ShellService {
             task.launchPath = launchPath
             task.arguments = arguments
             task.environment = self.environment
+            print(task.environment)
             
             let pipe = Pipe()
             task.standardOutput = pipe
@@ -40,13 +42,26 @@ final class ShellService {
         }
     }
     
-    private func setEnvironment() {
-        run("/bin/bash", ["-l", "-c", "printenv"]) { output in
-            self.environment = Dictionary(uniqueKeysWithValues: output
-                    .split(separator: "\n")
-                    .map { $0.split(separator: "=") }
-                    .map { (String($0[0]), String($0[1])) })
-        }
+    private func run(_ launchPath: String, _ arguments: [String]) -> String {
+        let task = Process()
+        task.launchPath = launchPath
+        task.arguments = arguments
+        task.environment = self.environment
+        
+        let pipe = Pipe()
+        task.standardOutput = pipe
+        task.launch()
+        
+        let data = pipe.fileHandleForReading.readDataToEndOfFile()
+        let output = String(data: data, encoding: .utf8)?.trimmingCharacters(in: .whitespacesAndNewlines)
+        return output ?? ""
+    }
+    
+    private func parseEnvironment(_ output: String) -> [String: String] {
+        return Dictionary(uniqueKeysWithValues: output
+                            .split(separator: "\n")
+                            .map { $0.split(separator: "=") }
+                            .map { (String($0[0]), String($0[1])) })
     }
     
 }
