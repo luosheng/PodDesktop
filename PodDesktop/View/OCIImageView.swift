@@ -30,6 +30,7 @@ struct OCIImageView: View {
                 }
             }
         }
+        .padding()
     }
     
     private func browseFile() {
