@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct PodDesktopApp: App {
+    
+    @StateObject var globalStore = GlobalStore()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(globalStore)
         }
         .commands {
             SidebarCommands()

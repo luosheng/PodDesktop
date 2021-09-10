@@ -12,6 +12,7 @@
 		B392EB4826EB243700602A47 /* OCIImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B392EB4726EB243700602A47 /* OCIImageItem.swift */; };
 		B392EB4A26EB2C6200602A47 /* OCIImageOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B392EB4926EB2C6200602A47 /* OCIImageOperationView.swift */; };
 		B392EB4D26EB48C100602A47 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = B392EB4C26EB48C100602A47 /* AlertToast */; };
+		B392EB4F26EB4DE700602A47 /* GlobalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B392EB4E26EB4DE700602A47 /* GlobalStore.swift */; };
 		B3AD754D26E6FE5C00F7E695 /* PodDesktopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD754C26E6FE5C00F7E695 /* PodDesktopApp.swift */; };
 		B3AD754F26E6FE5C00F7E695 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD754E26E6FE5C00F7E695 /* ContentView.swift */; };
 		B3AD755126E6FE6000F7E695 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3AD755026E6FE6000F7E695 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 		B32B175426EB093B00E0DD53 /* events.log */ = {isa = PBXFileReference; lastKnownFileType = text; path = events.log; sourceTree = "<group>"; };
 		B392EB4726EB243700602A47 /* OCIImageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCIImageItem.swift; sourceTree = "<group>"; };
 		B392EB4926EB2C6200602A47 /* OCIImageOperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCIImageOperationView.swift; sourceTree = "<group>"; };
+		B392EB4E26EB4DE700602A47 /* GlobalStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalStore.swift; sourceTree = "<group>"; };
 		B3AD754926E6FE5C00F7E695 /* PodDesktop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodDesktop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3AD754C26E6FE5C00F7E695 /* PodDesktopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodDesktopApp.swift; sourceTree = "<group>"; };
 		B3AD754E26E6FE5C00F7E695 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			children = (
 				B3AD756D26E7171B00F7E695 /* ContainerStore.swift */,
 				B3AD758426E769B800F7E695 /* ImageStore.swift */,
+				B392EB4E26EB4DE700602A47 /* GlobalStore.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				B3AD757326E71B2A00F7E695 /* MockModel.swift in Sources */,
 				B3AD756E26E7171B00F7E695 /* ContainerStore.swift in Sources */,
 				B3AD757926E7409300F7E695 /* PodService.swift in Sources */,
+				B392EB4F26EB4DE700602A47 /* GlobalStore.swift in Sources */,
 				B3AD754D26E6FE5C00F7E695 /* PodDesktopApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

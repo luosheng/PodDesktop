@@ -12,7 +12,8 @@ struct OCIImageItem: View {
     
     var image: OCIImage
     @State private var hovering = false
-    @State private var showToast = false
+    
+    @EnvironmentObject private var globalStore: GlobalStore
     
     var body: some View {
         HStack {
@@ -34,7 +35,8 @@ struct OCIImageItem: View {
                 Button(action: {
                     NSPasteboard.general.clearContents()
                     NSPasteboard.general.setString(image.id, forType: .string)
-                    showToast.toggle()
+                    
+                    globalStore.toastState = ToastState(showToast: true, type: .complete(.green), message: "Image id \(image.id) copied")
                 }) {
                     Image(systemSymbol: .paperclipCircle)
                         .resizable()
@@ -58,14 +60,12 @@ struct OCIImageItem: View {
         .onHover(perform: { hovering in
             self.hovering = hovering
         })
-        .toast(isPresenting: $showToast) {
-            AlertToast(type: .regular, title: "Image id \(image.id) copied")
-        }
     }
 }
 
 struct OCIImageItem_Previews: PreviewProvider {
     static var previews: some View {
         OCIImageItem(image: MockModel().imageStore.images[0])
+            .environmentObject(GlobalStore())
     }
 }

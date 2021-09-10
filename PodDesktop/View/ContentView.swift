@@ -6,15 +6,23 @@
 //
 
 import SwiftUI
+import AlertToast
 
 struct ContentView: View {
+    
+    @EnvironmentObject var globalStore: GlobalStore
+    
     var body: some View {
         Sidebar()
+            .toast(isPresenting: $globalStore.toastState.showToast) {
+                AlertToast(type: globalStore.toastState.type, title: globalStore.toastState.message)
+            }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(GlobalStore())
     }
 }
